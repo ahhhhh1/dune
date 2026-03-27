@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.Boot.a CMakeFiles/Monitors.Boot.dir/src/Monitors/Boot/Task.cpp.o
+/usr/bin/ranlib libMonitors.Boot.a

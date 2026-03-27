@@ -1,0 +1,2 @@
+/usr/bin/ar qc libControl.ASV.Autopilot.a CMakeFiles/Control.ASV.Autopilot.dir/src/Control/ASV/Autopilot/Task.cpp.o
+/usr/bin/ranlib libControl.ASV.Autopilot.a

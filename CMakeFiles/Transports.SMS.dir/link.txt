@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTransports.SMS.a CMakeFiles/Transports.SMS.dir/src/Transports/SMS/Task.cpp.o
+/usr/bin/ranlib libTransports.SMS.a

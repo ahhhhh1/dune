@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSensors.RaspberryPiSenseHatv2.a CMakeFiles/Sensors.RaspberryPiSenseHatv2.dir/src/Sensors/RaspberryPiSenseHatv2/Task.cpp.o
+/usr/bin/ranlib libSensors.RaspberryPiSenseHatv2.a

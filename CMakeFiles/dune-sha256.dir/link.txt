@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/dune-sha256.dir/programs/utils/dune-sha256.cpp.o -o dune-sha256  libdune-core.a -lrt -lpthread -lm -lnsl -ldl 

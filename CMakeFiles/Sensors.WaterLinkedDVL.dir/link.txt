@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSensors.WaterLinkedDVL.a CMakeFiles/Sensors.WaterLinkedDVL.dir/src/Sensors/WaterLinkedDVL/Task.cpp.o
+/usr/bin/ranlib libSensors.WaterLinkedDVL.a

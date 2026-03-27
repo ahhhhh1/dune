@@ -1,0 +1,2 @@
+/usr/bin/ar qc libNavigation.General.Estimator.a CMakeFiles/Navigation.General.Estimator.dir/src/Navigation/General/Estimator/Task.cpp.o
+/usr/bin/ranlib libNavigation.General.Estimator.a

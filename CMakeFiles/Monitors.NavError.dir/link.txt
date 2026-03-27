@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.NavError.a CMakeFiles/Monitors.NavError.dir/src/Monitors/NavError/Task.cpp.o
+/usr/bin/ranlib libMonitors.NavError.a

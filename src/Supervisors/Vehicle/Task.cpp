@@ -32,11 +32,15 @@
 #include <vector>
 #include <set>
 
+//Behavior Tree headers
+#include "behaviortree_cpp/bt_factory.h"
+
 // DUNE headers.
 #include <DUNE/DUNE.hpp>
 
 // Local headers.
 #include "ManeuverSupervisor.hpp"
+
 
 namespace Supervisors
 {
@@ -97,6 +101,13 @@ namespace Supervisors
       Time::Counter<float> m_loops_timer;
       //! Maneuver handler
       ManeuverSupervisor* m_man_sup;
+      //! Tree XML path
+      std::string m_tree_xml_path;
+      //! BT factory and runtime objects
+      BT::BehaviorTreeFactory m_bt_factory;
+      BT::Blackboard::Ptr m_bt_blackboard;
+      BT::Tree m_bt_tree;
+      bool m_bt_ready;
       //! A timeout for calibration state
       float m_calib_timeout;
       //! Task arguments.
@@ -107,7 +118,8 @@ namespace Supervisors
         m_switch_time(-1.0),
         m_ignore_errors(false),
         m_scope_ref(0),
-        m_man_sup(NULL)
+        m_man_sup(NULL),
+        m_bt_ready(false)
       {
         param("Vital Entities", m_args.vital_ents)
         .defaultValue("")
@@ -121,6 +133,10 @@ namespace Supervisors
         param("Maneuver Handling Timeout", m_args.handle_timeout)
         .defaultValue("1.0")
         .description("Timeout for starting or stopping a maneuver");
+
+        param("Behavior Tree XML", m_tree_xml_path)
+        .defaultValue("../src/Supervisors/Vehicle/Manuever.xml")
+        .description("Path to behavior tree XML for maneuver handling");
 
         bind<IMC::Abort>(this);
         bind<IMC::ControlLoops>(this);
@@ -149,6 +165,18 @@ namespace Supervisors
         m_err_timer.setTop(c_error_period);
         m_loops_timer.setTop(c_loops_check_time);
         m_idle.duration = 0;
+        if(m_bt_factory.builders().count("ManueverControlState_Switch") == 0){
+        m_bt_factory.registerNodeType<ManueverControlState_Switch>("ManueverControlState_Switch");
+        m_bt_factory.registerNodeType<Source_mode>("Source_mode");
+        m_bt_factory.registerNodeType<eta_update>("eta_update");
+        m_bt_factory.registerNodeType<set_done>("set_done");
+        m_bt_factory.registerNodeType<ERROR>("ERROR");
+        m_bt_factory.registerNodeType<STOPPED>("STOPPED");
+        m_bt_blackboard = BT::Blackboard::create();
+        m_bt_tree = m_bt_factory.createTreeFromFile(m_tree_xml_path, m_bt_blackboard);
+        }
+
+        war("ooa");
       }
 
       void
@@ -416,43 +444,30 @@ namespace Supervisors
       void
       consume(const IMC::ManeuverControlState* msg)
       {
-        if (msg->getSource() != getSystemId())
+        if (!msg)
           return;
 
-        m_man_sup->update(msg);
-
-        if (!maneuverMode())
-          return;
-
-        switch ((IMC::ManeuverControlState::StateEnum)msg->state)
+        if (!m_bt_ready)
         {
-          case IMC::ManeuverControlState::MCS_EXECUTING:
-            if (msg->eta != m_vs.maneuver_eta)
-            {
-              m_vs.maneuver_eta = msg->eta;
-              dispatch(m_vs);
-            }
-            break;
-          case IMC::ManeuverControlState::MCS_DONE:
-            debug("%s maneuver done",
-                  IMC::Factory::getAbbrevFromId(m_vs.maneuver_type).c_str());
-            m_vs.maneuver_eta = 0;
-            m_vs.flags |= IMC::VehicleState::VFLG_MANEUVER_DONE;
-            dispatch(m_vs);
-            // start timer
-            m_switch_time = Clock::get();
-            break;
-          case IMC::ManeuverControlState::MCS_ERROR:
-            m_vs.last_error = IMC::Factory::getAbbrevFromId(m_vs.maneuver_type)
-            + DTR(" maneuver error: ") + msg->info;
-            m_vs.last_error_time = msg->getTimeStamp();
-            debug("%s", m_vs.last_error.c_str());
-            changeMode(IMC::VehicleState::VS_SERVICE);
-            reset();
-            break;
-          case IMC::ManeuverControlState::MCS_STOPPED:
-            break;
+          if (m_tree_xml_path.empty())
+          {
+            err("Behavior tree XML path not configured");
+            return;
+          }
+
+          std::ifstream check_file(m_tree_xml_path);
+          if (!check_file.good())
+          {
+            err("Behavior tree XML file not found: %s", m_tree_xml_path.c_str());
+            return;
+          }
+          
+          m_bt_ready = true;
         }
+
+        m_bt_blackboard->set("msg", msg);
+        m_bt_blackboard->set("m_vs", m_vs);
+        m_bt_tree.tickOnce();
       }
 
       void
@@ -773,6 +788,155 @@ namespace Supervisors
       {
         return (m_vs.control_loops & (IMC::CL_TELEOPERATION | IMC::CL_NO_OVERRIDE)) != 0;
       }
+      
+      class eta_update : public BT::SyncActionNode
+      {
+        public:
+          Task* mt;
+          eta_update(const std::string &name, const BT::NodeConfig& config): BT::SyncActionNode(name, config){};
+        
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg");
+          if(msg.value()->eta!=mt->m_vs.maneuver_eta){
+            mt->m_vs.maneuver_eta = msg.value()->eta;
+            mt->dispatch(mt->m_vs);
+          }
+          return BT::NodeStatus::SUCCESS; 
+        }
+
+      };
+
+      class set_done : public BT::SyncActionNode
+      {
+        public:
+          Task* mt;    
+          set_done(const std::string &name, const BT::NodeConfig& config): BT::SyncActionNode(name, config){};
+
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          mt->debug("%s maneuver done", IMC::Factory::getAbbrevFromId(mt->m_vs.maneuver_type).c_str());
+          mt->m_vs.maneuver_eta = 0;
+          mt->m_vs.flags |= IMC::VehicleState::VFLG_MANEUVER_DONE;
+          mt->dispatch(mt->m_vs);
+          // start timer
+          mt->m_switch_time = Clock::get();
+
+          return BT::NodeStatus::SUCCESS; 
+        }
+
+      };
+
+      class ERROR : public BT::SyncActionNode
+      {
+        public: 
+          Task* mt;    
+          ERROR(const std::string &name, const BT::NodeConfig& config): BT::SyncActionNode(name, config){};
+        
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg");
+          mt->m_vs.last_error = IMC::Factory::getAbbrevFromId(mt->m_vs.maneuver_type)+ DTR(" maneuver error: ") + msg.value()->info;
+          mt->m_vs.last_error_time = msg.value()->getTimeStamp();
+          mt->debug("%s", mt->m_vs.last_error.c_str());
+          mt->changeMode(IMC::VehicleState::VS_SERVICE);
+          mt->reset();
+
+          return BT::NodeStatus::SUCCESS; 
+        }
+
+      };
+
+      class STOPPED : public BT::SyncActionNode
+      {
+        public:
+          STOPPED(const std::string &name, const BT::NodeConfig& config): BT::SyncActionNode(name, config){};
+
+          static BT::PortsList providedPorts(){
+          return {};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          return BT::NodeStatus::SUCCESS; 
+        }
+
+      };
+
+      class ManueverControlState_Switch : public BT::ControlNode
+      {
+        public:
+
+          ManueverControlState_Switch(const std::string& name, const BT::NodeConfiguration& config): BT::ControlNode(name, config) {};
+        
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg");
+          if(msg.value()->state == IMC::ManeuverControlState::MCS_EXECUTING) return children_nodes_[0]->executeTick();
+          if(msg.value()->state == IMC::ManeuverControlState::MCS_DONE) return children_nodes_[1]->executeTick();
+          if(msg.value()->state == IMC::ManeuverControlState::MCS_ERROR) return children_nodes_[2]->executeTick();
+          if(msg.value()->state == IMC::ManeuverControlState::MCS_STOPPED) return children_nodes_[3]->executeTick();
+
+          return BT::NodeStatus::FAILURE; 
+        }
+      };
+
+      class Source_mode : public BT::ConditionNode
+      {
+        private:
+
+        public:
+          Task* mt;
+          Source_mode(const std::string& name, const BT::NodeConfiguration& config): BT::ConditionNode(name, config){};
+
+        static BT::PortsList providedPorts()
+        {
+          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg"); 
+          if(msg.value()->getSource() == mt->getSystemId())
+          {
+            mt->m_man_sup->update(msg.value());
+            if(!(mt->maneuverMode())) return BT::NodeStatus::FAILURE;
+            return BT::NodeStatus::SUCCESS;
+          }
+          else return BT::NodeStatus::FAILURE; 
+        }
+      };
+
     };
   }
 }

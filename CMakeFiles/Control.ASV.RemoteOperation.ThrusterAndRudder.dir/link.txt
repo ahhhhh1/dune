@@ -1,0 +1,2 @@
+/usr/bin/ar qc libControl.ASV.RemoteOperation.ThrusterAndRudder.a CMakeFiles/Control.ASV.RemoteOperation.ThrusterAndRudder.dir/src/Control/ASV/RemoteOperation/ThrusterAndRudder/Task.cpp.o
+/usr/bin/ranlib libControl.ASV.RemoteOperation.ThrusterAndRudder.a

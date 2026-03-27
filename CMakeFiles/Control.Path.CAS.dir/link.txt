@@ -1,0 +1,2 @@
+/usr/bin/ar qc libControl.Path.CAS.a CMakeFiles/Control.Path.CAS.dir/src/Control/Path/CAS/Task.cpp.o
+/usr/bin/ranlib libControl.Path.CAS.a

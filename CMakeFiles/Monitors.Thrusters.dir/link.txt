@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.Thrusters.a CMakeFiles/Monitors.Thrusters.dir/src/Monitors/Thrusters/Task.cpp.o
+/usr/bin/ranlib libMonitors.Thrusters.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libNavigation.General.NavManager.a CMakeFiles/Navigation.General.NavManager.dir/src/Navigation/General/NavManager/Task.cpp.o
+/usr/bin/ranlib libNavigation.General.NavManager.a

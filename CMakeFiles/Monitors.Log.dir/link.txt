@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.Log.a CMakeFiles/Monitors.Log.dir/src/Monitors/Log/Task.cpp.o
+/usr/bin/ranlib libMonitors.Log.a

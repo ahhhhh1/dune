@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSimulators.Autopilot.a CMakeFiles/Simulators.Autopilot.dir/src/Simulators/Autopilot/Task.cpp.o
+/usr/bin/ranlib libSimulators.Autopilot.a

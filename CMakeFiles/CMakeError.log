@@ -1,0 +1,2229 @@
+Determining if the __INTEL_COMPILER exist failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_dd4a6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dd4a6.dir/build.make CMakeFiles/cmTC_dd4a6.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dd4a6.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_dd4a6.dir/CheckSymbolExists.c.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘__INTEL_COMPILER’ undeclared (first use in this function)
+    8 |   return ((int*)(&__INTEL_COMPILER))[argc];
+      |                   ^~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_dd4a6.dir/build.make:78: CMakeFiles/cmTC_dd4a6.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_dd4a6/fast] Error 2
+
+
+File /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __INTEL_COMPILER
+  return ((int*)(&__INTEL_COMPILER))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __SUNPRO_C exist failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b1db5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b1db5.dir/build.make CMakeFiles/cmTC_b1db5.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b1db5.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b1db5.dir/CheckSymbolExists.c.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘__SUNPRO_C’ undeclared (first use in this function)
+    8 |   return ((int*)(&__SUNPRO_C))[argc];
+      |                   ^~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_b1db5.dir/build.make:78: CMakeFiles/cmTC_b1db5.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b1db5/fast] Error 2
+
+
+File /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __SUNPRO_C
+  return ((int*)(&__SUNPRO_C))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __clang__ exist failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4acd1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4acd1.dir/build.make CMakeFiles/cmTC_4acd1.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4acd1.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4acd1.dir/CheckSymbolExists.c.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘__clang__’ undeclared (first use in this function)
+    8 |   return ((int*)(&__clang__))[argc];
+      |                   ^~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_4acd1.dir/build.make:78: CMakeFiles/cmTC_4acd1.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_4acd1/fast] Error 2
+
+
+File /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __clang__
+  return ((int*)(&__clang__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C++ SOURCE FILE Test __ARCH64__ failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6149b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6149b.dir/build.make CMakeFiles/cmTC_6149b.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6149b.dir/src.cxx.o
+/usr/bin/c++ -D__ARCH64__  -std=c++17 -o CMakeFiles/cmTC_6149b.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:2: error: #error not defined
+    3 | #error not defined
+      |  ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_6149b.dir/build.make:78: CMakeFiles/cmTC_6149b.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_6149b/fast] Error 2
+
+
+Source file was:
+#if defined(__arch64__)
+#else
+#error not defined
+#endif
+int main(void) {return 0; }
+
+Performing C++ SOURCE FILE Test __AARCH64__ failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_11fce/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_11fce.dir/build.make CMakeFiles/cmTC_11fce.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_11fce.dir/src.cxx.o
+/usr/bin/c++ -D__AARCH64__  -std=c++17 -o CMakeFiles/cmTC_11fce.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:2: error: #error not defined
+    3 | #error not defined
+      |  ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_11fce.dir/build.make:78: CMakeFiles/cmTC_11fce.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_11fce/fast] Error 2
+
+
+Source file was:
+#if defined(__aarch64__)
+#else
+#error not defined
+#endif
+int main(void) {return 0; }
+
+Performing C++ SOURCE FILE Test DUNE_CPU_MIXED_ENDIAN_DOUBLES failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2aae4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2aae4.dir/build.make CMakeFiles/cmTC_2aae4.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2aae4.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_CPU_MIXED_ENDIAN_DOUBLES  -std=c++17 -o CMakeFiles/cmTC_2aae4.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:4: error: #error not ARM architecture
+    3 | #  error not ARM architecture
+      |    ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_2aae4.dir/build.make:78: CMakeFiles/cmTC_2aae4.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_2aae4/fast] Error 2
+
+
+Source file was:
+
+#if !defined(__arm__)
+#  error not ARM architecture
+#endif
+
+#if defined(__VFP_FP__)
+#  error normal doubles.
+#endif
+
+int main(void) { return 0; }
+
+Performing C++ SOURCE FILE Test DUNE_CPU_VARIANT_ATOM failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_dfd46/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dfd46.dir/build.make CMakeFiles/cmTC_dfd46.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_dfd46.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_CPU_VARIANT_ATOM  -std=c++17 -o CMakeFiles/cmTC_dfd46.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:2:2: error: #error undefined macro
+    2 | #error undefined macro
+      |  ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_dfd46.dir/build.make:78: CMakeFiles/cmTC_dfd46.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_dfd46/fast] Error 2
+
+
+Source file was:
+#if !defined(__atom__)
+#error undefined macro
+#endif
+int main(void){return 0;}
+Performing C++ SOURCE FILE Test DUNE_CPU_VARIANT_GEODE failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7be7c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7be7c.dir/build.make CMakeFiles/cmTC_7be7c.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7be7c.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_CPU_VARIANT_GEODE  -std=c++17 -o CMakeFiles/cmTC_7be7c.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:2:2: error: #error undefined macro
+    2 | #error undefined macro
+      |  ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_7be7c.dir/build.make:78: CMakeFiles/cmTC_7be7c.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_7be7c/fast] Error 2
+
+
+Source file was:
+#if !defined(__geode__)
+#error undefined macro
+#endif
+int main(void){return 0;}
+Determining if the __ANDROID__ exist failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0bb32/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0bb32.dir/build.make CMakeFiles/cmTC_0bb32.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0bb32.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0bb32.dir/CheckSymbolExists.c.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘__ANDROID__’ undeclared (first use in this function)
+    8 |   return ((int*)(&__ANDROID__))[argc];
+      |                   ^~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_0bb32.dir/build.make:78: CMakeFiles/cmTC_0bb32.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0bb32/fast] Error 2
+
+
+File /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __ANDROID__
+  return ((int*)(&__ANDROID__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C++ SOURCE FILE Test OS_LINUX24 failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3ed67/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3ed67.dir/build.make CMakeFiles/cmTC_3ed67.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3ed67.dir/src.cxx.o
+/usr/bin/c++ -DOS_LINUX24  -std=c++17 -o CMakeFiles/cmTC_3ed67.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:4: error: #error Linux 2.5 or greater
+    4 | #  error Linux 2.5 or greater
+      |    ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_3ed67.dir/build.make:78: CMakeFiles/cmTC_3ed67.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_3ed67/fast] Error 2
+
+
+Source file was:
+
+#include <linux/version.h>
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 5, 0)
+#  error Linux 2.5 or greater
+#endif
+
+Performing C++ SOURCE FILE Test LLVM_LIBC failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_17dec/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_17dec.dir/build.make CMakeFiles/cmTC_17dec.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_17dec.dir/src.cxx.o
+/usr/bin/c++ -DLLVM_LIBC  -std=c++17 -o CMakeFiles/cmTC_17dec.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:2:26: error: ‘_LIBCPP_VERSION’ was not declared in this scope
+    2 |  int main(void) { return _LIBCPP_VERSION; }
+      |                          ^~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_17dec.dir/build.make:78: CMakeFiles/cmTC_17dec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_17dec/fast] Error 2
+
+
+Source file was:
+#include <cstddef>
+ int main(void) { return _LIBCPP_VERSION; }
+Determining if the __UCLIBC__ exist failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_21774/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_21774.dir/build.make CMakeFiles/cmTC_21774.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_21774.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_21774.dir/CheckSymbolExists.c.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘__UCLIBC__’ undeclared (first use in this function); did you mean ‘__LINE__’?
+    8 |   return ((int*)(&__UCLIBC__))[argc];
+      |                   ^~~~~~~~~~
+      |                   __LINE__
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_21774.dir/build.make:78: CMakeFiles/cmTC_21774.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_21774/fast] Error 2
+
+
+File /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __UCLIBC__
+  return ((int*)(&__UCLIBC__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __BIONIC__ exist failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_98028/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_98028.dir/build.make CMakeFiles/cmTC_98028.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98028.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_98028.dir/CheckSymbolExists.c.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘__BIONIC__’ undeclared (first use in this function); did you mean ‘__LINE__’?
+    8 |   return ((int*)(&__BIONIC__))[argc];
+      |                   ^~~~~~~~~~
+      |                   __LINE__
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_98028.dir/build.make:78: CMakeFiles/cmTC_98028.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_98028/fast] Error 2
+
+
+File /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __BIONIC__
+  return ((int*)(&__BIONIC__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function getch exists in the ws2_32 failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4a172/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4a172.dir/build.make CMakeFiles/cmTC_4a172.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4a172.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=getch -o CMakeFiles/cmTC_4a172.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4a172
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a172.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getch CMakeFiles/cmTC_4a172.dir/CheckFunctionExists.c.o -o cmTC_4a172  -lws2_32 -lrt 
+/usr/bin/ld: cannot find -lws2_32: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_4a172.dir/build.make:99: cmTC_4a172] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_4a172/fast] Error 2
+
+
+
+Determining if the function getch exists in the wsock32 failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_26f40/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_26f40.dir/build.make CMakeFiles/cmTC_26f40.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26f40.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=getch -o CMakeFiles/cmTC_26f40.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_26f40
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26f40.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getch CMakeFiles/cmTC_26f40.dir/CheckFunctionExists.c.o -o cmTC_26f40  -lwsock32 -lrt 
+/usr/bin/ld: cannot find -lwsock32: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_26f40.dir/build.make:99: cmTC_26f40] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_26f40/fast] Error 2
+
+
+
+Determining if the function getch exists in the iphlpapi failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f7573/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f7573.dir/build.make CMakeFiles/cmTC_f7573.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7573.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=getch -o CMakeFiles/cmTC_f7573.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f7573
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7573.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getch CMakeFiles/cmTC_f7573.dir/CheckFunctionExists.c.o -o cmTC_f7573  -liphlpapi -lrt 
+/usr/bin/ld: cannot find -liphlpapi: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_f7573.dir/build.make:99: cmTC_f7573] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f7573/fast] Error 2
+
+
+
+Determining if the function setsockopt exists in the socket failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6fe22/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6fe22.dir/build.make CMakeFiles/cmTC_6fe22.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6fe22.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=setsockopt -o CMakeFiles/cmTC_6fe22.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6fe22
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fe22.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=setsockopt CMakeFiles/cmTC_6fe22.dir/CheckFunctionExists.c.o -o cmTC_6fe22  -lsocket -lrt 
+/usr/bin/ld: cannot find -lsocket: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_6fe22.dir/build.make:99: cmTC_6fe22] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_6fe22/fast] Error 2
+
+
+
+Determining if the function inet_addr exists in the xnet failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ed7e7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ed7e7.dir/build.make CMakeFiles/cmTC_ed7e7.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed7e7.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=inet_addr -o CMakeFiles/cmTC_ed7e7.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ed7e7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed7e7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=inet_addr CMakeFiles/cmTC_ed7e7.dir/CheckFunctionExists.c.o -o cmTC_ed7e7  -lxnet -lrt -lpthread -lm 
+/usr/bin/ld: cannot find -lxnet: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_ed7e7.dir/build.make:99: cmTC_ed7e7] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ed7e7/fast] Error 2
+
+
+
+Determining if the function gettext exists in the intl failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_504ef/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_504ef.dir/build.make CMakeFiles/cmTC_504ef.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_504ef.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gettext -o CMakeFiles/cmTC_504ef.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘gettext’; expected ‘char *(const char *)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.22/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_504ef
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_504ef.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gettext CMakeFiles/cmTC_504ef.dir/CheckFunctionExists.c.o -o cmTC_504ef  -lintl -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lintl: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_504ef.dir/build.make:99: cmTC_504ef] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_504ef/fast] Error 2
+
+
+
+Determining if the include file devctl.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f0f04/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f0f04.dir/build.make CMakeFiles/cmTC_f0f04.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f0f04.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_f0f04.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: devctl.h: No such file or directory
+    1 | #include <devctl.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_f0f04.dir/build.make:78: CMakeFiles/cmTC_f0f04.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f0f04/fast] Error 2
+
+
+
+Determining if the include file windows.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f55b1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f55b1.dir/build.make CMakeFiles/cmTC_f55b1.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f55b1.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_f55b1.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: windows.h: No such file or directory
+    1 | #include <windows.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_f55b1.dir/build.make:78: CMakeFiles/cmTC_f55b1.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f55b1/fast] Error 2
+
+
+
+Determining if the include file direct.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d6781/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d6781.dir/build.make CMakeFiles/cmTC_d6781.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d6781.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_d6781.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: direct.h: No such file or directory
+    1 | #include <direct.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_d6781.dir/build.make:78: CMakeFiles/cmTC_d6781.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d6781/fast] Error 2
+
+
+
+Determining if the include file winsock2.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7c632/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7c632.dir/build.make CMakeFiles/cmTC_7c632.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7c632.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_7c632.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: winsock2.h: No such file or directory
+    1 | #include <winsock2.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_7c632.dir/build.make:78: CMakeFiles/cmTC_7c632.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_7c632/fast] Error 2
+
+
+
+Determining if the include file mach-o/dyld.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_25ab3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_25ab3.dir/build.make CMakeFiles/cmTC_25ab3.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_25ab3.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_25ab3.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: mach-o/dyld.h: No such file or directory
+    1 | #include <mach-o/dyld.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_25ab3.dir/build.make:78: CMakeFiles/cmTC_25ab3.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_25ab3/fast] Error 2
+
+
+
+Determining if the include file process.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_79a24/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_79a24.dir/build.make CMakeFiles/cmTC_79a24.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_79a24.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_79a24.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: process.h: No such file or directory
+    1 | #include <process.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_79a24.dir/build.make:78: CMakeFiles/cmTC_79a24.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_79a24/fast] Error 2
+
+
+
+Determining if the include file bsp.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_28af3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_28af3.dir/build.make CMakeFiles/cmTC_28af3.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_28af3.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_28af3.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: bsp.h: No such file or directory
+    1 | #include <bsp.h>
+      |          ^~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_28af3.dir/build.make:78: CMakeFiles/cmTC_28af3.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_28af3/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_SYS_SYSCTL_H failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_90453/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_90453.dir/build.make CMakeFiles/cmTC_90453.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_90453.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_SYS_SYSCTL_H  -std=c++17 -o CMakeFiles/cmTC_90453.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:10: fatal error: sys/sysctl.h: No such file or directory
+    3 | #include <sys/sysctl.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_90453.dir/build.make:78: CMakeFiles/cmTC_90453.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_90453/fast] Error 2
+
+
+Source file was:
+#include <sys/types.h>
+
+#include <sys/sysctl.h>
+int main(void){ return 0; }
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_TIMEPPS_H failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d1654/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d1654.dir/build.make CMakeFiles/cmTC_d1654.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d1654.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_TIMEPPS_H  -std=c++17 -o CMakeFiles/cmTC_d1654.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:10: fatal error: timepps.h: No such file or directory
+    3 | #include <timepps.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_d1654.dir/build.make:78: CMakeFiles/cmTC_d1654.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d1654/fast] Error 2
+
+
+Source file was:
+#include <unistd.h>
+
+#include <timepps.h>
+int main(void){ return 0; }
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_IPHLPAPI_H failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_caf6f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_caf6f.dir/build.make CMakeFiles/cmTC_caf6f.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_caf6f.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_IPHLPAPI_H  -std=c++17 -o CMakeFiles/cmTC_caf6f.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: iphlpapi.h: No such file or directory
+    2 | #include <iphlpapi.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_caf6f.dir/build.make:78: CMakeFiles/cmTC_caf6f.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_caf6f/fast] Error 2
+
+
+Source file was:
+
+#include <iphlpapi.h>
+int main(void){ return 0; }
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WS2TCPIP_H failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_58808/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_58808.dir/build.make CMakeFiles/cmTC_58808.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_58808.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WS2TCPIP_H  -std=c++17 -o CMakeFiles/cmTC_58808.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: ws2tcpip.h: No such file or directory
+    2 | #include <ws2tcpip.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_58808.dir/build.make:78: CMakeFiles/cmTC_58808.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_58808/fast] Error 2
+
+
+Source file was:
+
+#include <ws2tcpip.h>
+int main(void){ return 0; }
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WS2SPI_H failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_594e8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_594e8.dir/build.make CMakeFiles/cmTC_594e8.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_594e8.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WS2SPI_H  -std=c++17 -o CMakeFiles/cmTC_594e8.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: ws2spi.h: No such file or directory
+    2 | #include <ws2spi.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_594e8.dir/build.make:78: CMakeFiles/cmTC_594e8.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_594e8/fast] Error 2
+
+
+Source file was:
+
+#include <ws2spi.h>
+int main(void){ return 0; }
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_STRNCPY_S failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_bf01b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bf01b.dir/build.make CMakeFiles/cmTC_bf01b.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bf01b.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_STRNCPY_S  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_bf01b.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘size_t’ was not declared in this scope
+    4 | size_t xx;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:1:1: note: ‘size_t’ is defined in header ‘<cstddef>’; did you forget to ‘#include <cstddef>’?
+  +++ |+#include <cstddef>
+    1 | 
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:7: error: expected ‘;’ before ‘xxxx’
+    6 | size_t xxxx;
+      |       ^~~~~
+      |       ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:8:2: error: ‘errno_t’ was not declared in this scope
+    8 |  errno_t rv = strncpy_s(&x, xx, &xxx, xxxx);
+      |  ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:6: warning: unused variable ‘x’ [-Wunused-variable]
+    3 | char x;
+      |      ^
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:6: warning: unused variable ‘xxx’ [-Wunused-variable]
+    5 | char xxx;
+      |      ^~~
+gmake[1]: *** [CMakeFiles/cmTC_bf01b.dir/build.make:78: CMakeFiles/cmTC_bf01b.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_bf01b/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+char x;
+size_t xx;
+char xxx;
+size_t xxxx;
+
+ errno_t rv = strncpy_s(&x, xx, &xxx, xxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_VSNPRINTF_S failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_06e89/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_06e89.dir/build.make CMakeFiles/cmTC_06e89.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_06e89.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_VSNPRINTF_S  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_06e89.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘size_t’ was not declared in this scope
+    4 | size_t xx;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:1:1: note: ‘size_t’ is defined in header ‘<cstddef>’; did you forget to ‘#include <cstddef>’?
+  +++ |+#include <cstddef>
+    1 | 
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:7: error: expected ‘;’ before ‘xxx’
+    5 | size_t xxx;
+      |       ^~~~
+      |       ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:2: error: ‘va_list’ was not declared in this scope
+    7 |  va_list xxxxx;
+      |  ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:1:1: note: ‘va_list’ is defined in header ‘<cstdarg>’; did you forget to ‘#include <cstdarg>’?
+  +++ |+#include <cstdarg>
+    1 | 
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:27: error: ‘xx’ was not declared in this scope; did you mean ‘x’?
+    9 |  int rv = vsnprintf_s(&x, xx, xxx, &xxxx, xxxxx);
+      |                           ^~
+      |                           x
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:31: error: ‘xxx’ was not declared in this scope; did you mean ‘xxxx’?
+    9 |  int rv = vsnprintf_s(&x, xx, xxx, &xxxx, xxxxx);
+      |                               ^~~
+      |                               xxxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:43: error: ‘xxxxx’ was not declared in this scope; did you mean ‘xxxx’?
+    9 |  int rv = vsnprintf_s(&x, xx, xxx, &xxxx, xxxxx);
+      |                                           ^~~~~
+      |                                           xxxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:11: error: ‘vsnprintf_s’ was not declared in this scope
+    9 |  int rv = vsnprintf_s(&x, xx, xxx, &xxxx, xxxxx);
+      |           ^~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    9 |  int rv = vsnprintf_s(&x, xx, xxx, &xxxx, xxxxx);
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_06e89.dir/build.make:78: CMakeFiles/cmTC_06e89.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_06e89/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+char x;
+size_t xx;
+size_t xxx;
+char xxxx;
+ va_list xxxxx;
+
+ int rv = vsnprintf_s(&x, xx, xxx, &xxxx, xxxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CLOSESOCKET failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5dfcc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5dfcc.dir/build.make CMakeFiles/cmTC_5dfcc.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5dfcc.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CLOSESOCKET  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_5dfcc.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘SOCKET’ was not declared in this scope
+    3 | SOCKET x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:23: error: ‘x’ was not declared in this scope
+    5 |  int rv = closesocket(x);
+      |                       ^
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:11: error: ‘closesocket’ was not declared in this scope
+    5 |  int rv = closesocket(x);
+      |           ^~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    5 |  int rv = closesocket(x);
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_5dfcc.dir/build.make:78: CMakeFiles/cmTC_5dfcc.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_5dfcc/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+SOCKET x;
+
+ int rv = closesocket(x);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_PTHREAD_WIN32_PROCESS_ATTACH_NP failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ff7e1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ff7e1.dir/build.make CMakeFiles/cmTC_ff7e1.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ff7e1.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_PTHREAD_WIN32_PROCESS_ATTACH_NP  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_ff7e1.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:11: error: ‘pthread_win32_process_attach_np’ was not declared in this scope
+    5 |  int rv = pthread_win32_process_attach_np();
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    5 |  int rv = pthread_win32_process_attach_np();
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_ff7e1.dir/build.make:78: CMakeFiles/cmTC_ff7e1.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ff7e1/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+int main(void) {
+
+ int rv = pthread_win32_process_attach_np();
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS__GETCWD failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_227eb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_227eb.dir/build.make CMakeFiles/cmTC_227eb.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_227eb.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS__GETCWD  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_227eb.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:13: error: ‘_getcwd’ was not declared in this scope
+    6 |  char* rv = _getcwd(&x, xx);
+      |             ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:8: warning: unused variable ‘rv’ [-Wunused-variable]
+    6 |  char* rv = _getcwd(&x, xx);
+      |        ^~
+gmake[1]: *** [CMakeFiles/cmTC_227eb.dir/build.make:78: CMakeFiles/cmTC_227eb.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_227eb/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+char x;
+int xx;
+
+ char* rv = _getcwd(&x, xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_FORMAT_MESSAGE failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9b9f7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9b9f7.dir/build.make CMakeFiles/cmTC_9b9f7.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9b9f7.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_FORMAT_MESSAGE  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_9b9f7.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘DWORD’ was not declared in this scope
+    3 | DWORD x;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:6: error: expected ‘;’ before ‘xxx’
+    5 | DWORD xxx;
+      |      ^~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:6: error: expected ‘;’ before ‘xxxx’
+    6 | DWORD xxxx;
+      |      ^~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:8:6: error: expected ‘;’ before ‘xxxxxx’
+    8 | DWORD xxxxxx;
+      |      ^~~~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:1: error: ‘va_list’ was not declared in this scope
+    9 | va_list xxxxxxx;
+      | ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:1:1: note: ‘va_list’ is defined in header ‘<cstdarg>’; did you forget to ‘#include <cstdarg>’?
+  +++ |+#include <cstdarg>
+    1 | 
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:11:7: error: expected ‘;’ before ‘rv’
+   11 |  DWORD rv = FormatMessage(x, &xx, xxx, xxxx, &xxxxx, xxxxxx, &xxxxxxx);
+      |       ^~~
+      |       ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:6: warning: unused variable ‘xx’ [-Wunused-variable]
+    4 | char xx;
+      |      ^~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:6: warning: unused variable ‘xxxxx’ [-Wunused-variable]
+    7 | char xxxxx;
+      |      ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_9b9f7.dir/build.make:78: CMakeFiles/cmTC_9b9f7.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_9b9f7/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+DWORD x;
+char xx;
+DWORD xxx;
+DWORD xxxx;
+char xxxxx;
+DWORD xxxxxx;
+va_list xxxxxxx;
+
+ DWORD rv = FormatMessage(x, &xx, xxx, xxxx, &xxxxx, xxxxxx, &xxxxxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_GET_SYSTEM_TIME_AS_FILE_TIME failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2450c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2450c.dir/build.make CMakeFiles/cmTC_2450c.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2450c.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_GET_SYSTEM_TIME_AS_FILE_TIME  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_2450c.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘FILETIME’ was not declared in this scope
+    3 | FILETIME x;
+      | ^~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:26: error: ‘x’ was not declared in this scope
+    5 | GetSystemTimeAsFileTime(&x);
+      |                          ^
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘GetSystemTimeAsFileTime’ was not declared in this scope
+    5 | GetSystemTimeAsFileTime(&x);
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_2450c.dir/build.make:78: CMakeFiles/cmTC_2450c.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_2450c/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+FILETIME x;
+
+GetSystemTimeAsFileTime(&x);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_QUERY_PERFORMANCE_COUNTER failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_14de8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_14de8.dir/build.make CMakeFiles/cmTC_14de8.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_14de8.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_QUERY_PERFORMANCE_COUNTER  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_14de8.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘LARGE_INTEGER’ was not declared in this scope
+    3 | LARGE_INTEGER x;
+      | ^~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:37: error: ‘x’ was not declared in this scope
+    5 |  bool rv = QueryPerformanceCounter(&x);
+      |                                     ^
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:12: error: ‘QueryPerformanceCounter’ was not declared in this scope
+    5 |  bool rv = QueryPerformanceCounter(&x);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:7: warning: unused variable ‘rv’ [-Wunused-variable]
+    5 |  bool rv = QueryPerformanceCounter(&x);
+      |       ^~
+gmake[1]: *** [CMakeFiles/cmTC_14de8.dir/build.make:78: CMakeFiles/cmTC_14de8.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_14de8/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+LARGE_INTEGER x;
+
+ bool rv = QueryPerformanceCounter(&x);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_GET_LAST_ERROR failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_aa7fa/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aa7fa.dir/build.make CMakeFiles/cmTC_aa7fa.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_aa7fa.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_GET_LAST_ERROR  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_aa7fa.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:2: error: ‘DWORD’ was not declared in this scope
+    4 |  DWORD rv = GetLastError();
+      |  ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_aa7fa.dir/build.make:78: CMakeFiles/cmTC_aa7fa.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_aa7fa/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+
+ DWORD rv = GetLastError();
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CREATE_WAITABLE_TIMER failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d7044/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d7044.dir/build.make CMakeFiles/cmTC_d7044.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d7044.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CREATE_WAITABLE_TIMER  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_d7044.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘SECURITY_ATTRIBUTES’ was not declared in this scope
+    3 | SECURITY_ATTRIBUTES x;
+      | ^~~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘BOOL’ was not declared in this scope
+    4 | BOOL xx;
+      | ^~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:2: error: ‘HANDLE’ was not declared in this scope
+    7 |  HANDLE rv = CreateWaitableTimer(&x, xx, &xxx);
+      |  ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:6: warning: unused variable ‘xxx’ [-Wunused-variable]
+    5 | char xxx;
+      |      ^~~
+gmake[1]: *** [CMakeFiles/cmTC_d7044.dir/build.make:78: CMakeFiles/cmTC_d7044.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d7044/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+SECURITY_ATTRIBUTES x;
+BOOL xx;
+char xxx;
+
+ HANDLE rv = CreateWaitableTimer(&x, xx, &xxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_GET_MODULE_FILE_NAME failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ba226/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ba226.dir/build.make CMakeFiles/cmTC_ba226.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ba226.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_GET_MODULE_FILE_NAME  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_ba226.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HMODULE’ was not declared in this scope
+    3 | HMODULE x;
+      | ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘LPSTR’ was not declared in this scope
+    4 | LPSTR xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘DWORD’ was not declared in this scope
+    5 | DWORD xxx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:7: error: expected ‘;’ before ‘rv’
+    7 |  DWORD rv = GetModuleFileName(x, xx, xxx);
+      |       ^~~
+      |       ;
+gmake[1]: *** [CMakeFiles/cmTC_ba226.dir/build.make:78: CMakeFiles/cmTC_ba226.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ba226/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HMODULE x;
+LPSTR xx;
+DWORD xxx;
+
+ DWORD rv = GetModuleFileName(x, xx, xxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_LOAD_LIBRARY failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_75da7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_75da7.dir/build.make CMakeFiles/cmTC_75da7.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_75da7.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_LOAD_LIBRARY  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_75da7.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:2: error: ‘HMODULE’ was not declared in this scope
+    5 |  HMODULE rv = LoadLibrary(&x);
+      |  ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:6: warning: unused variable ‘x’ [-Wunused-variable]
+    3 | char x;
+      |      ^
+gmake[1]: *** [CMakeFiles/cmTC_75da7.dir/build.make:78: CMakeFiles/cmTC_75da7.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_75da7/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+char x;
+
+ HMODULE rv = LoadLibrary(&x);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_TLS_ALLOC failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_eb929/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_eb929.dir/build.make CMakeFiles/cmTC_eb929.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_eb929.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_TLS_ALLOC  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_eb929.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:2: error: ‘DWORD’ was not declared in this scope
+    4 |  DWORD rv = TlsAlloc();
+      |  ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_eb929.dir/build.make:78: CMakeFiles/cmTC_eb929.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_eb929/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+
+ DWORD rv = TlsAlloc();
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CREATE_DIRECTORY failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c2a9b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c2a9b.dir/build.make CMakeFiles/cmTC_c2a9b.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c2a9b.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CREATE_DIRECTORY  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_c2a9b.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘LPCTSTR’ was not declared in this scope
+    3 | LPCTSTR x;
+      | ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘LPSECURITY_ATTRIBUTES’ was not declared in this scope
+    4 | LPSECURITY_ATTRIBUTES xx;
+      | ^~~~~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:2: error: ‘BOOL’ was not declared in this scope
+    6 |  BOOL rv = CreateDirectory(x, xx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_c2a9b.dir/build.make:78: CMakeFiles/cmTC_c2a9b.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_c2a9b/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+LPCTSTR x;
+LPSECURITY_ATTRIBUTES xx;
+
+ BOOL rv = CreateDirectory(x, xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WSA_STARTUP failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_698c9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_698c9.dir/build.make CMakeFiles/cmTC_698c9.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_698c9.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WSA_STARTUP  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_698c9.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘WORD’ was not declared in this scope
+    3 | WORD x;
+      | ^~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘WSADATA’ was not declared in this scope
+    4 | WSADATA xx;
+      | ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:22: error: ‘x’ was not declared in this scope
+    6 |  int rv = WSAStartup(x, &xx);
+      |                      ^
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:26: error: ‘xx’ was not declared in this scope
+    6 |  int rv = WSAStartup(x, &xx);
+      |                          ^~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:11: error: ‘WSAStartup’ was not declared in this scope
+    6 |  int rv = WSAStartup(x, &xx);
+      |           ^~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    6 |  int rv = WSAStartup(x, &xx);
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_698c9.dir/build.make:78: CMakeFiles/cmTC_698c9.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_698c9/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+WORD x;
+WSADATA xx;
+
+ int rv = WSAStartup(x, &xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WSA_CLEANUP failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_18311/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_18311.dir/build.make CMakeFiles/cmTC_18311.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_18311.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WSA_CLEANUP  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_18311.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:11: error: ‘WSACleanup’ was not declared in this scope
+    4 |  int rv = WSACleanup();
+      |           ^~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    4 |  int rv = WSACleanup();
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_18311.dir/build.make:78: CMakeFiles/cmTC_18311.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_18311/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+
+ int rv = WSACleanup();
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WSA_STRING_TO_ADDRESS failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_09540/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_09540.dir/build.make CMakeFiles/cmTC_09540.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_09540.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WSA_STRING_TO_ADDRESS  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_09540.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘WSAPROTOCOL_INFO’ was not declared in this scope
+    5 | WSAPROTOCOL_INFO xxx;
+      | ^~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:1: error: ‘SOCKADDR’ was not declared in this scope
+    6 | SOCKADDR xxxx;
+      | ^~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:39: error: ‘xxx’ was not declared in this scope; did you mean ‘xx’?
+    9 |  int rv = WSAStringToAddress(&x, xx, &xxx, &xxxx, &xxxxx);
+      |                                       ^~~
+      |                                       xx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:45: error: ‘xxxx’ was not declared in this scope; did you mean ‘xxxxx’?
+    9 |  int rv = WSAStringToAddress(&x, xx, &xxx, &xxxx, &xxxxx);
+      |                                             ^~~~
+      |                                             xxxxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:11: error: ‘WSAStringToAddress’ was not declared in this scope
+    9 |  int rv = WSAStringToAddress(&x, xx, &xxx, &xxxx, &xxxxx);
+      |           ^~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    9 |  int rv = WSAStringToAddress(&x, xx, &xxx, &xxxx, &xxxxx);
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_09540.dir/build.make:78: CMakeFiles/cmTC_09540.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_09540/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+char x;
+int xx;
+WSAPROTOCOL_INFO xxx;
+SOCKADDR xxxx;
+int xxxxx;
+
+ int rv = WSAStringToAddress(&x, xx, &xxx, &xxxx, &xxxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WSA_IOCTL failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_72055/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_72055.dir/build.make CMakeFiles/cmTC_72055.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_72055.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WSA_IOCTL  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_72055.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘SOCKET’ was not declared in this scope
+    3 | SOCKET x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DWORD’ was not declared in this scope
+    4 | DWORD xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:6: error: expected ‘;’ before ‘xxxx’
+    6 | DWORD xxxx;
+      |      ^~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:8:6: error: expected ‘;’ before ‘xxxxxx’
+    8 | DWORD xxxxxx;
+      |      ^~~~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:1: error: ‘LPDWORD’ was not declared in this scope
+    9 | LPDWORD xxxxxxx;
+      | ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:10:1: error: ‘LPWSAOVERLAPPED’ was not declared in this scope
+   10 | LPWSAOVERLAPPED xxxxxxxx;
+      | ^~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:11:1: error: ‘LPWSAOVERLAPPED_COMPLETION_ROUTINE’ was not declared in this scope
+   11 | LPWSAOVERLAPPED_COMPLETION_ROUTINE xxxxxxxxx;
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:20: error: ‘x’ was not declared in this scope
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |                    ^
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:23: error: ‘xx’ was not declared in this scope; did you mean ‘xxx’?
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |                       ^~
+      |                       xxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:33: error: ‘xxxx’ was not declared in this scope; did you mean ‘xxxxx’?
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |                                 ^~~~
+      |                                 xxxxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:47: error: ‘xxxxxx’ was not declared in this scope; did you mean ‘xxxxx’?
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |                                               ^~~~~~
+      |                                               xxxxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:55: error: ‘xxxxxxx’ was not declared in this scope; did you mean ‘xxxxx’?
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |                                                       ^~~~~~~
+      |                                                       xxxxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:64: error: ‘xxxxxxxx’ was not declared in this scope; did you mean ‘xxxxx’?
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |                                                                ^~~~~~~~
+      |                                                                xxxxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:74: error: ‘xxxxxxxxx’ was not declared in this scope
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |                                                                          ^~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:11: error: ‘WSAIoctl’ was not declared in this scope
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |           ^~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:13:6: warning: unused variable ‘rv’ [-Wunused-variable]
+   13 |  int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_72055.dir/build.make:78: CMakeFiles/cmTC_72055.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_72055/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+SOCKET x;
+DWORD xx;
+char xxx;
+DWORD xxxx;
+char xxxxx;
+DWORD xxxxxx;
+LPDWORD xxxxxxx;
+LPWSAOVERLAPPED xxxxxxxx;
+LPWSAOVERLAPPED_COMPLETION_ROUTINE xxxxxxxxx;
+
+ int rv = WSAIoctl(x, xx, &xxx, xxxx, &xxxxx, xxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_POSIX_STRERROR_R failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_59f36/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_59f36.dir/build.make CMakeFiles/cmTC_59f36.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_59f36.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_POSIX_STRERROR_R  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_59f36.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:21: error: invalid conversion from ‘char*’ to ‘int’ [-fpermissive]
+    9 |  int rv = strerror_r(x, &xx, xxx);
+      |           ~~~~~~~~~~^~~~~~~~~~~~~
+      |                     |
+      |                     char*
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    9 |  int rv = strerror_r(x, &xx, xxx);
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_59f36.dir/build.make:78: CMakeFiles/cmTC_59f36.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_59f36/fast] Error 2
+
+
+Source file was:
+#include <cstring>
+#include <string.h>
+
+int main(void) {
+int x;
+char xx;
+size_t xxx;
+
+ int rv = strerror_r(x, &xx, xxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CREATE_FILE failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ac86a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ac86a.dir/build.make CMakeFiles/cmTC_ac86a.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ac86a.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CREATE_FILE  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_ac86a.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘LPCSTR’ was not declared in this scope
+    3 | LPCSTR x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DWORD’ was not declared in this scope
+    4 | DWORD xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:6: error: expected ‘;’ before ‘xxx’
+    5 | DWORD xxx;
+      |      ^~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:1: error: ‘SECURITY_ATTRIBUTES’ was not declared in this scope
+    6 | SECURITY_ATTRIBUTES xxxx;
+      | ^~~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:6: error: expected ‘;’ before ‘xxxxx’
+    7 | DWORD xxxxx;
+      |      ^~~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:8:6: error: expected ‘;’ before ‘xxxxxx’
+    8 | DWORD xxxxxx;
+      |      ^~~~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:1: error: ‘HANDLE’ was not declared in this scope
+    9 | HANDLE xxxxxxx;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:11:8: error: expected ‘;’ before ‘rv’
+   11 |  HANDLE rv = CreateFile(x, xx, xxx, &xxxx, xxxxx, xxxxxx, xxxxxxx);
+      |        ^~~
+      |        ;
+gmake[1]: *** [CMakeFiles/cmTC_ac86a.dir/build.make:78: CMakeFiles/cmTC_ac86a.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ac86a/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+LPCSTR x;
+DWORD xx;
+DWORD xxx;
+SECURITY_ATTRIBUTES xxxx;
+DWORD xxxxx;
+DWORD xxxxxx;
+HANDLE xxxxxxx;
+
+ HANDLE rv = CreateFile(x, xx, xxx, &xxxx, xxxxx, xxxxxx, xxxxxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_READ_FILE failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2c3d1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2c3d1.dir/build.make CMakeFiles/cmTC_2c3d1.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2c3d1.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_READ_FILE  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_2c3d1.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘LPVOID’ was not declared in this scope
+    4 | LPVOID xx;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘DWORD’ was not declared in this scope
+    5 | DWORD xxx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:6: error: expected ‘;’ before ‘xxxx’
+    6 | DWORD xxxx;
+      |      ^~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:1: error: ‘OVERLAPPED’ was not declared in this scope
+    7 | OVERLAPPED xxxxx;
+      | ^~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:2: error: ‘BOOL’ was not declared in this scope
+    9 |  BOOL rv = ReadFile(x, xx, xxx, &xxxx, &xxxxx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_2c3d1.dir/build.make:78: CMakeFiles/cmTC_2c3d1.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_2c3d1/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+LPVOID xx;
+DWORD xxx;
+DWORD xxxx;
+OVERLAPPED xxxxx;
+
+ BOOL rv = ReadFile(x, xx, xxx, &xxxx, &xxxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WRITE_FILE failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ea612/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ea612.dir/build.make CMakeFiles/cmTC_ea612.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ea612.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WRITE_FILE  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_ea612.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘LPCVOID’ was not declared in this scope
+    4 | LPCVOID xx;
+      | ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘DWORD’ was not declared in this scope
+    5 | DWORD xxx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:6: error: expected ‘;’ before ‘xxxx’
+    6 | DWORD xxxx;
+      |      ^~~~~
+      |      ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:1: error: ‘OVERLAPPED’ was not declared in this scope
+    7 | OVERLAPPED xxxxx;
+      | ^~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:9:2: error: ‘BOOL’ was not declared in this scope
+    9 |  BOOL rv = WriteFile(x, xx, xxx, &xxxx, &xxxxx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_ea612.dir/build.make:78: CMakeFiles/cmTC_ea612.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ea612/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+LPCVOID xx;
+DWORD xxx;
+DWORD xxxx;
+OVERLAPPED xxxxx;
+
+ BOOL rv = WriteFile(x, xx, xxx, &xxxx, &xxxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_GET_OVERLAPPED_RESULT failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d6a80/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d6a80.dir/build.make CMakeFiles/cmTC_d6a80.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d6a80.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_GET_OVERLAPPED_RESULT  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_d6a80.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘OVERLAPPED’ was not declared in this scope
+    4 | OVERLAPPED xx;
+      | ^~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘DWORD’ was not declared in this scope
+    5 | DWORD xxx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:1: error: ‘BOOL’ was not declared in this scope
+    6 | BOOL xxxx;
+      | ^~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:8:6: error: expected ‘;’ before ‘rv’
+    8 |  BOOL rv = GetOverlappedResult(x, &xx, &xxx, xxxx);
+      |      ^~~
+      |      ;
+gmake[1]: *** [CMakeFiles/cmTC_d6a80.dir/build.make:78: CMakeFiles/cmTC_d6a80.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d6a80/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+OVERLAPPED xx;
+DWORD xxx;
+BOOL xxxx;
+
+ BOOL rv = GetOverlappedResult(x, &xx, &xxx, xxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_SET_COMM_STATE failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_728a6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_728a6.dir/build.make CMakeFiles/cmTC_728a6.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_728a6.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_SET_COMM_STATE  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_728a6.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DCB’ was not declared in this scope
+    4 | DCB xx;
+      | ^~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:2: error: ‘BOOL’ was not declared in this scope
+    6 |  BOOL rv = SetCommState(x, &xx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_728a6.dir/build.make:78: CMakeFiles/cmTC_728a6.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_728a6/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+DCB xx;
+
+ BOOL rv = SetCommState(x, &xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_GET_COMM_STATE failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e6074/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e6074.dir/build.make CMakeFiles/cmTC_e6074.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e6074.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_GET_COMM_STATE  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_e6074.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DCB’ was not declared in this scope
+    4 | DCB xx;
+      | ^~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:2: error: ‘BOOL’ was not declared in this scope
+    6 |  BOOL rv = GetCommState(x, &xx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_e6074.dir/build.make:78: CMakeFiles/cmTC_e6074.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_e6074/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+DCB xx;
+
+ BOOL rv = GetCommState(x, &xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_SET_COMM_MASK failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_32635/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_32635.dir/build.make CMakeFiles/cmTC_32635.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_32635.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_SET_COMM_MASK  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_32635.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DWORD’ was not declared in this scope
+    4 | DWORD xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:2: error: ‘BOOL’ was not declared in this scope
+    6 |  BOOL rv = SetCommMask(x, xx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_32635.dir/build.make:78: CMakeFiles/cmTC_32635.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_32635/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+DWORD xx;
+
+ BOOL rv = SetCommMask(x, xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_PURGE_COMM failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5383d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5383d.dir/build.make CMakeFiles/cmTC_5383d.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5383d.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_PURGE_COMM  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_5383d.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DWORD’ was not declared in this scope
+    4 | DWORD xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:2: error: ‘BOOL’ was not declared in this scope
+    6 |  BOOL rv = PurgeComm(x, xx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_5383d.dir/build.make:78: CMakeFiles/cmTC_5383d.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_5383d/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+DWORD xx;
+
+ BOOL rv = PurgeComm(x, xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WAIT_COMM_EVENT failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7191e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7191e.dir/build.make CMakeFiles/cmTC_7191e.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7191e.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WAIT_COMM_EVENT  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_7191e.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DWORD’ was not declared in this scope
+    4 | DWORD xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘OVERLAPPED’ was not declared in this scope
+    5 | OVERLAPPED xxx;
+      | ^~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:2: error: ‘BOOL’ was not declared in this scope
+    7 |  BOOL rv = WaitCommEvent(x, &xx, &xxx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_7191e.dir/build.make:78: CMakeFiles/cmTC_7191e.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_7191e/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+DWORD xx;
+OVERLAPPED xxx;
+
+ BOOL rv = WaitCommEvent(x, &xx, &xxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_SET_COMM_BREAK failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ed1d2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ed1d2.dir/build.make CMakeFiles/cmTC_ed1d2.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ed1d2.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_SET_COMM_BREAK  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_ed1d2.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:2: error: ‘BOOL’ was not declared in this scope
+    5 |  BOOL rv = SetCommBreak(x);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_ed1d2.dir/build.make:78: CMakeFiles/cmTC_ed1d2.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ed1d2/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+
+ BOOL rv = SetCommBreak(x);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CLEAR_COMM_BREAK failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1d304/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1d304.dir/build.make CMakeFiles/cmTC_1d304.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1d304.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CLEAR_COMM_BREAK  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_1d304.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:2: error: ‘BOOL’ was not declared in this scope
+    5 |  BOOL rv = ClearCommBreak(x);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_1d304.dir/build.make:78: CMakeFiles/cmTC_1d304.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_1d304/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+
+ BOOL rv = ClearCommBreak(x);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CLEAR_COMM_ERROR failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6644a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6644a.dir/build.make CMakeFiles/cmTC_6644a.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6644a.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CLEAR_COMM_ERROR  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_6644a.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DWORD’ was not declared in this scope
+    4 | DWORD xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:1: error: ‘COMSTAT’ was not declared in this scope
+    5 | COMSTAT xxx;
+      | ^~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:7:2: error: ‘BOOL’ was not declared in this scope
+    7 |  BOOL rv = ClearCommError(x, &xx, &xxx);
+      |  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_6644a.dir/build.make:78: CMakeFiles/cmTC_6644a.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_6644a/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+DWORD xx;
+COMSTAT xxx;
+
+ BOOL rv = ClearCommError(x, &xx, &xxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_WAIT_FOR_SINGLE_OBJECT failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_be08a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_be08a.dir/build.make CMakeFiles/cmTC_be08a.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_be08a.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_WAIT_FOR_SINGLE_OBJECT  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_be08a.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘HANDLE’ was not declared in this scope
+    3 | HANDLE x;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘DWORD’ was not declared in this scope
+    4 | DWORD xx;
+      | ^~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:7: error: expected ‘;’ before ‘rv’
+    6 |  DWORD rv = WaitForSingleObject(x, xx);
+      |       ^~~
+      |       ;
+gmake[1]: *** [CMakeFiles/cmTC_be08a.dir/build.make:78: CMakeFiles/cmTC_be08a.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_be08a/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+HANDLE x;
+DWORD xx;
+
+ DWORD rv = WaitForSingleObject(x, xx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CREATE_EVENT failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c6d45/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c6d45.dir/build.make CMakeFiles/cmTC_c6d45.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c6d45.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CREATE_EVENT  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_c6d45.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘SECURITY_ATTRIBUTES’ was not declared in this scope
+    3 | SECURITY_ATTRIBUTES x;
+      | ^~~~~~~~~~~~~~~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:1: error: ‘BOOL’ was not declared in this scope
+    4 | BOOL xx;
+      | ^~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:5:5: error: expected ‘;’ before ‘xxx’
+    5 | BOOL xxx;
+      |     ^~~~
+      |     ;
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:1: error: ‘LPCSTR’ was not declared in this scope
+    6 | LPCSTR xxxx;
+      | ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:8:2: error: ‘HANDLE’ was not declared in this scope
+    8 |  HANDLE rv = CreateEvent(&x, xx, xxx, xxxx);
+      |  ^~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_c6d45.dir/build.make:78: CMakeFiles/cmTC_c6d45.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_c6d45/fast] Error 2
+
+
+Source file was:
+
+int main(void) {
+SECURITY_ATTRIBUTES x;
+BOOL xx;
+BOOL xxx;
+LPCSTR xxxx;
+
+ HANDLE rv = CreateEvent(&x, xx, xxx, xxxx);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS__ISNAN failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b12ed/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b12ed.dir/build.make CMakeFiles/cmTC_b12ed.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b12ed.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS__ISNAN  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_b12ed.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:11: error: ‘_isnan’ was not declared in this scope
+    6 |  int rv = _isnan(x);
+      |           ^~~~~~
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:6:6: warning: unused variable ‘rv’ [-Wunused-variable]
+    6 |  int rv = _isnan(x);
+      |      ^~
+gmake[1]: *** [CMakeFiles/cmTC_b12ed.dir/build.make:78: CMakeFiles/cmTC_b12ed.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b12ed/fast] Error 2
+
+
+Source file was:
+#include <float.h>
+
+int main(void) {
+double x;
+
+ int rv = _isnan(x);
+return 0;
+}
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_CRITICAL_SECTION failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9e0a5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9e0a5.dir/build.make CMakeFiles/cmTC_9e0a5.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9e0a5.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_CRITICAL_SECTION  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_9e0a5.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:2:18: error: ‘CRITICAL_SECTION’ was not declared in this scope
+    2 | int main(void) { CRITICAL_SECTION x; return 0;}
+      |                  ^~~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_9e0a5.dir/build.make:78: CMakeFiles/cmTC_9e0a5.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_9e0a5/fast] Error 2
+
+
+Source file was:
+
+int main(void) { CRITICAL_SECTION x; return 0;}
+
+Determining if the function BVTSonar_Create exists in the bvtsdk failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0b6b4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0b6b4.dir/build.make CMakeFiles/cmTC_0b6b4.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b6b4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=BVTSonar_Create -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_0b6b4.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0b6b4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b6b4.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=BVTSonar_Create -Wall -Wshadow -pedantic CMakeFiles/cmTC_0b6b4.dir/CheckFunctionExists.c.o -o cmTC_0b6b4  -lbvtsdk -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lbvtsdk: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_0b6b4.dir/build.make:99: cmTC_0b6b4] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0b6b4/fast] Error 2
+
+
+
+Determining if the include file bvt_sdk.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f775b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f775b.dir/build.make CMakeFiles/cmTC_f775b.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f775b.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_f775b.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: bvt_sdk.h: No such file or directory
+    1 | #include <bvt_sdk.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_f775b.dir/build.make:78: CMakeFiles/cmTC_f775b.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f775b/fast] Error 2
+
+
+
+Determining if the function libusb_init exists in the usb-1.0 failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_edbe3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_edbe3.dir/build.make CMakeFiles/cmTC_edbe3.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_edbe3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=libusb_init -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_edbe3.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_edbe3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edbe3.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=libusb_init -Wall -Wshadow -pedantic CMakeFiles/cmTC_edbe3.dir/CheckFunctionExists.c.o -o cmTC_edbe3  -lusb-1.0 -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lusb-1.0: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_edbe3.dir/build.make:99: cmTC_edbe3] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_edbe3/fast] Error 2
+
+
+
+Determining if the function FT_Open exists in the ftd2xx failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4e3ef/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4e3ef.dir/build.make CMakeFiles/cmTC_4e3ef.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4e3ef.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=FT_Open -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_4e3ef.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4e3ef
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e3ef.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=FT_Open -Wall -Wshadow -pedantic CMakeFiles/cmTC_4e3ef.dir/CheckFunctionExists.c.o -o cmTC_4e3ef  -lftd2xx -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lftd2xx: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_4e3ef.dir/build.make:99: cmTC_4e3ef] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_4e3ef/fast] Error 2
+
+
+
+Determining if the include file ftd2xx.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_35184/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_35184.dir/build.make CMakeFiles/cmTC_35184.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_35184.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_35184.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: ftd2xx.h: No such file or directory
+    1 | #include <ftd2xx.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_35184.dir/build.make:78: CMakeFiles/cmTC_35184.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_35184/fast] Error 2
+
+
+
+Determining if the function jpeg_set_defaults exists in the jpeg failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_41d3b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_41d3b.dir/build.make CMakeFiles/cmTC_41d3b.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_41d3b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=jpeg_set_defaults -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_41d3b.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_41d3b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41d3b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=jpeg_set_defaults -Wall -Wshadow -pedantic CMakeFiles/cmTC_41d3b.dir/CheckFunctionExists.c.o -o cmTC_41d3b  -ljpeg -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -ljpeg: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_41d3b.dir/build.make:99: cmTC_41d3b] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_41d3b/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test DUNE_SYS_HAS_JPEGLIB_H failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2a75f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2a75f.dir/build.make CMakeFiles/cmTC_2a75f.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2a75f.dir/src.cxx.o
+/usr/bin/c++ -DDUNE_SYS_HAS_JPEGLIB_H  -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_2a75f.dir/src.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/src.cxx:4:10: fatal error: jpeglib.h: No such file or directory
+    4 | #include <jpeglib.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_2a75f.dir/build.make:78: CMakeFiles/cmTC_2a75f.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_2a75f/fast] Error 2
+
+
+Source file was:
+#include <sys/types.h>
+#include <stdio.h>
+
+#include <jpeglib.h>
+int main(void){ return 0; }
+
+Determining if the function hid_close exists in the hidapi-libusb failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1931c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1931c.dir/build.make CMakeFiles/cmTC_1931c.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1931c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=hid_close -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_1931c.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1931c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1931c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=hid_close -Wall -Wshadow -pedantic CMakeFiles/cmTC_1931c.dir/CheckFunctionExists.c.o -o cmTC_1931c  -lhidapi-libusb -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lhidapi-libusb: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_1931c.dir/build.make:99: cmTC_1931c] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_1931c/fast] Error 2
+
+
+
+Determining if the function usb_device_find_USB_MCC exists in the mccusb failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cb7ad/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cb7ad.dir/build.make CMakeFiles/cmTC_cb7ad.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cb7ad.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=usb_device_find_USB_MCC -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_cb7ad.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cb7ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb7ad.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=usb_device_find_USB_MCC -Wall -Wshadow -pedantic CMakeFiles/cmTC_cb7ad.dir/CheckFunctionExists.c.o -o cmTC_cb7ad  -lmccusb -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lmccusb: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_cb7ad.dir/build.make:99: cmTC_cb7ad] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_cb7ad/fast] Error 2
+
+
+
+Determining if the include file mccusb/pmd.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_28e8a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_28e8a.dir/build.make CMakeFiles/cmTC_28e8a.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_28e8a.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_28e8a.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: mccusb/pmd.h: No such file or directory
+    1 | #include <mccusb/pmd.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_28e8a.dir/build.make:78: CMakeFiles/cmTC_28e8a.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_28e8a/fast] Error 2
+
+
+
+Determining if the function CPhidgetBridge_setEnabled exists in the phidget21 failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d647f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d647f.dir/build.make CMakeFiles/cmTC_d647f.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d647f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=CPhidgetBridge_setEnabled -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_d647f.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d647f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d647f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=CPhidgetBridge_setEnabled -Wall -Wshadow -pedantic CMakeFiles/cmTC_d647f.dir/CheckFunctionExists.c.o -o cmTC_d647f  -lphidget21 -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lphidget21: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_d647f.dir/build.make:99: cmTC_d647f] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d647f/fast] Error 2
+
+
+
+Determining if the include file phidget21.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a919e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a919e.dir/build.make CMakeFiles/cmTC_a919e.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a919e.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_a919e.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: phidget21.h: No such file or directory
+    1 | #include <phidget21.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_a919e.dir/build.make:78: CMakeFiles/cmTC_a919e.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_a919e/fast] Error 2
+
+
+
+Determining if the function sbp_state_init exists in the swiftnav-static failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4a462/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4a462.dir/build.make CMakeFiles/cmTC_4a462.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4a462.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sbp_state_init -Wall -Wshadow -pedantic -o CMakeFiles/cmTC_4a462.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4a462
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a462.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sbp_state_init -Wall -Wshadow -pedantic CMakeFiles/cmTC_4a462.dir/CheckFunctionExists.c.o -o cmTC_4a462  -lswiftnav-static -lrt -lpthread -lm -lnsl -ldl 
+/usr/bin/ld: cannot find -lswiftnav-static: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_4a462.dir/build.make:99: cmTC_4a462] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_4a462/fast] Error 2
+
+
+
+Determining if the include file libswiftnav/sbp.h exists failed with the following output:
+Change Dir: /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ab4e2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ab4e2.dir/build.make CMakeFiles/cmTC_ab4e2.dir/build
+gmake[1]: Entering directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ab4e2.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -Wall -Wshadow -pedantic -std=c++17 -o CMakeFiles/cmTC_ab4e2.dir/CheckIncludeFile.cxx.o -c /home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: libswiftnav/sbp.h: No such file or directory
+    1 | #include <libswiftnav/sbp.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_ab4e2.dir/build.make:78: CMakeFiles/cmTC_ab4e2.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/amilcar/workspace/dune/source/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ab4e2/fast] Error 2
+
+
+

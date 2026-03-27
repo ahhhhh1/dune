@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/dune-stm.dir/programs/utils/dune-stm.cpp.o -o dune-stm  libdune-core.a -lrt -lpthread -lm -lnsl -ldl 

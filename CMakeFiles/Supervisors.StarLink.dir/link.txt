@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSupervisors.StarLink.a CMakeFiles/Supervisors.StarLink.dir/src/Supervisors/StarLink/Task.cpp.o
+/usr/bin/ranlib libSupervisors.StarLink.a

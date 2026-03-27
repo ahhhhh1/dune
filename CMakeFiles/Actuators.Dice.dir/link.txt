@@ -1,0 +1,2 @@
+/usr/bin/ar qc libActuators.Dice.a CMakeFiles/Actuators.Dice.dir/src/Actuators/Dice/Task.cpp.o
+/usr/bin/ranlib libActuators.Dice.a

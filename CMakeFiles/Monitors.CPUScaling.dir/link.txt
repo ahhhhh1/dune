@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.CPUScaling.a CMakeFiles/Monitors.CPUScaling.dir/src/Monitors/CPUScaling/Task.cpp.o
+/usr/bin/ranlib libMonitors.CPUScaling.a

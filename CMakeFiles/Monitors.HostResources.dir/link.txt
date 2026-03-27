@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.HostResources.a CMakeFiles/Monitors.HostResources.dir/src/Monitors/HostResources/Task.cpp.o
+/usr/bin/ranlib libMonitors.HostResources.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.ZeroTier.a CMakeFiles/Monitors.ZeroTier.dir/src/Monitors/ZeroTier/Task.cpp.o
+/usr/bin/ranlib libMonitors.ZeroTier.a

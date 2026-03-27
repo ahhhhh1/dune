@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.NavigationLight.a CMakeFiles/Monitors.NavigationLight.dir/src/Monitors/NavigationLight/Task.cpp.o
+/usr/bin/ranlib libMonitors.NavigationLight.a

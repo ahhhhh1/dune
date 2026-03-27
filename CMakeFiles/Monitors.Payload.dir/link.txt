@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMonitors.Payload.a CMakeFiles/Monitors.Payload.dir/src/Monitors/Payload/Task.cpp.o
+/usr/bin/ranlib libMonitors.Payload.a

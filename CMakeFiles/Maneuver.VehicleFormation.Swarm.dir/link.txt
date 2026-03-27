@@ -1,0 +1,2 @@
+/usr/bin/ar qc libManeuver.VehicleFormation.Swarm.a CMakeFiles/Maneuver.VehicleFormation.Swarm.dir/src/Maneuver/VehicleFormation/Swarm/Task.cpp.o
+/usr/bin/ranlib libManeuver.VehicleFormation.Swarm.a

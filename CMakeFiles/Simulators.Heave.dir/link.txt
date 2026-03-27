@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSimulators.Heave.a CMakeFiles/Simulators.Heave.dir/src/Simulators/Heave/Task.cpp.o
+/usr/bin/ranlib libSimulators.Heave.a

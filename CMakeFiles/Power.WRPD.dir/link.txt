@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPower.WRPD.a CMakeFiles/Power.WRPD.dir/src/Power/WRPD/Task.cpp.o
+/usr/bin/ranlib libPower.WRPD.a

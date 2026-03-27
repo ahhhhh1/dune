@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSupervisors.Grounding.a CMakeFiles/Supervisors.Grounding.dir/src/Supervisors/Grounding/Task.cpp.o
+/usr/bin/ranlib libSupervisors.Grounding.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSensors.WT901C.a CMakeFiles/Sensors.WT901C.dir/src/Sensors/WT901C/Task.cpp.o
+/usr/bin/ranlib libSensors.WT901C.a

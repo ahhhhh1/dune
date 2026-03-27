@@ -1,0 +1,2 @@
+/usr/bin/ar qc libControl.ASV.RemoteOperation.DifferentialThrust.a CMakeFiles/Control.ASV.RemoteOperation.DifferentialThrust.dir/src/Control/ASV/RemoteOperation/DifferentialThrust/Task.cpp.o
+/usr/bin/ranlib libControl.ASV.RemoteOperation.DifferentialThrust.a

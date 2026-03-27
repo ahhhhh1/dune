@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSupervisors.Autonaut.a CMakeFiles/Supervisors.Autonaut.dir/src/Supervisors/Autonaut/Task.cpp.o
+/usr/bin/ranlib libSupervisors.Autonaut.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libActuators.RaspberryPiPWM.a CMakeFiles/Actuators.RaspberryPiPWM.dir/src/Actuators/RaspberryPiPWM/Task.cpp.o
+/usr/bin/ranlib libActuators.RaspberryPiPWM.a
