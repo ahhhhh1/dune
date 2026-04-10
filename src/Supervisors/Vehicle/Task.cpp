@@ -167,29 +167,20 @@ namespace Supervisors
         m_idle.duration = 0;
         if(m_bt_factory.builders().count("ManueverControlState_Switch") == 0)
     {
-        // Use a lambda to pass 'this' to the constructor
-        m_bt_factory.registerBuilder<eta_update>("eta_update", 
-            [this](const std::string& name, const BT::NodeConfig& config) {
-                return std::make_unique<eta_update>(name, config, this);
-            });
-
-        m_bt_factory.registerBuilder<set_done>("set_done", 
-            [this](const std::string& name, const BT::NodeConfig& config) {
-                return std::make_unique<set_done>(name, config, this);
-            });
-
-        m_bt_factory.registerBuilder<ERROR>("ERROR", 
-            [this](const std::string& name, const BT::NodeConfig& config) {
-                return std::make_unique<ERROR>(name, config, this);
-            });
-
-        m_bt_factory.registerBuilder<Source_mode>("Source_mode", 
-            [this](const std::string& name, const BT::NodeConfig& config) {
-                return std::make_unique<Source_mode>(name, config, this);
-            });
+        m_bt_factory.registerBuilder<eta_update>("eta_update", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<eta_update>(name, config, this);});
+        m_bt_factory.registerBuilder<set_done>("set_done", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<set_done>(name, config, this);});
+        m_bt_factory.registerBuilder<ERROR>("ERROR", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<ERROR>(name, config, this);});
+        m_bt_factory.registerBuilder<Source_mode>("Source_mode", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<Source_mode>(name, config, this);});
+        m_bt_factory.registerBuilder<VC_EXEC>("VC_EXEC", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<VC_EXEC>(name, config, this);});
+        m_bt_factory.registerBuilder<VC_STOP>("VC_STOP", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<VC_STOP>(name, config, this);});
+        m_bt_factory.registerBuilder<VC_START_CAL>("VC_START_CAL", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<VC_START_CAL>(name, config, this);});
+        m_bt_factory.registerBuilder<VC_STOP_CAL>("VC_STOP_CAL", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<VC_STOP_CAL>(name, config, this);});
+        
+        m_bt_factory.registerBuilder<VehicleCommand_Switch>("VehicleCommand_Switch", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<VehicleCommand_Switch>(name, config, this);});
 
         // Register the switch and others normally or with the same builder pattern
         m_bt_factory.registerNodeType<ManueverControlState_Switch>("ManueverControlState_Switch");
+        m_bt_factory.registerNodeType<Tree_selector>("Tree_selector");
         m_bt_factory.registerNodeType<STOPPED>("STOPPED");
 
         m_bt_blackboard = BT::Blackboard::create();
@@ -484,9 +475,8 @@ namespace Supervisors
           
           m_bt_ready = true;
         }
-
+        m_bt_blackboard->set("Consume_ID", 1);
         m_bt_blackboard->set("msg", msg);
-        m_bt_blackboard->set("m_vs", m_vs);
         m_bt_tree.tickOnce();
       }
 
@@ -639,28 +629,28 @@ namespace Supervisors
       void
       consume(const IMC::VehicleCommand* cmd)
       {
-        if (cmd->type != IMC::VehicleCommand::VC_REQUEST)
-          return;
 
-        trace("%s request (%u/%u/%u)", c_cmd_desc[cmd->command],
-              cmd->getSource(), cmd->getSourceEntity(), cmd->request_id);
-
-        switch ((IMC::VehicleCommand::CommandEnum)cmd->command)
+        if (!m_bt_ready)
         {
-          case IMC::VehicleCommand::VC_EXEC_MANEUVER:
-            startManeuver(cmd);
-            break;
-          case IMC::VehicleCommand::VC_STOP_MANEUVER:
-            stopManeuver();
-            requestOK(cmd, DTR("OK"));
-            break;
-          case IMC::VehicleCommand::VC_START_CALIBRATION:
-            startCalibration(cmd);
-            break;
-          case IMC::VehicleCommand::VC_STOP_CALIBRATION:
-            stopCalibration(cmd);
-            break;
+          if (m_tree_xml_path.empty())
+          {
+            err("Behavior tree XML path not configured");
+            return;
+          }
+
+          std::ifstream check_file(m_tree_xml_path);
+          if (!check_file.good())
+          {
+            err("Behavior tree XML file not found: %s", m_tree_xml_path.c_str());
+            return;
+          }
+          
+          m_bt_ready = true;
         }
+
+        m_bt_blackboard->set("Consume_ID", 0);
+        m_bt_blackboard->set("cmd", cmd);
+        m_bt_tree.tickOnce();
       }
 
       void
@@ -809,6 +799,30 @@ namespace Supervisors
         return (m_vs.control_loops & (IMC::CL_TELEOPERATION | IMC::CL_NO_OVERRIDE)) != 0;
       }
       
+      class Tree_selector: public BT::ControlNode
+      {
+        public:
+
+          Tree_selector(const std::string& name, const BT::NodeConfiguration& config): BT::ControlNode(name, config) {};
+        
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<int>("Consume_ID")};
+          
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto Consume_ID = getInput<int>("Consume_ID");
+          if(Consume_ID.value() == 0) return children_nodes_[0]->executeTick();
+          if(Consume_ID.value() == 1) return children_nodes_[1]->executeTick();
+
+          return BT::NodeStatus::FAILURE; 
+        }
+      };
+
       class eta_update : public BT::SyncActionNode
       {
         public:
@@ -955,6 +969,147 @@ namespace Supervisors
         }
       };
 
+      /*
+        {
+        if (cmd->type != IMC::VehicleCommand::VC_REQUEST)
+          return;
+
+        trace("%s request (%u/%u/%u)", c_cmd_desc[cmd->command],
+              cmd->getSource(), cmd->getSourceEntity(), cmd->request_id);
+
+        switch ((IMC::VehicleCommand::CommandEnum)cmd->command)
+        {
+          case IMC::VehicleCommand::VC_EXEC_MANEUVER:
+            startManeuver(cmd);
+            break;
+          case IMC::VehicleCommand::VC_STOP_MANEUVER:
+            stopManeuver();
+            requestOK(cmd, DTR("OK"));
+            break;
+          case IMC::VehicleCommand::VC_START_CALIBRATION:
+            startCalibration(cmd);
+            break;
+          case IMC::VehicleCommand::VC_STOP_CALIBRATION:
+            stopCalibration(cmd);
+            break;
+        }
+      }*/
+      class VehicleCommand_Switch : public BT::ControlNode
+      {
+        public:
+          Task* mt;
+          VehicleCommand_Switch(const std::string& name, const BT::NodeConfiguration& config, Task* task): BT::ControlNode(name, config), mt(task) {};
+        
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<const DUNE::IMC::VehicleCommand*>("cmd")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto cmd = getInput<const DUNE::IMC::VehicleCommand*>("cmd");
+
+          if (cmd.value()->type != IMC::VehicleCommand::VC_REQUEST) return BT::NodeStatus::FAILURE;
+          mt->trace("%s request (%u/%u/%u)", c_cmd_desc[cmd.value()->command], cmd.value()->getSource(), cmd.value()->getSourceEntity(), cmd.value()->request_id);
+
+          if(cmd.value()->command == IMC::VehicleCommand::VC_EXEC_MANEUVER) return children_nodes_[0]->executeTick();
+          if(cmd.value()->command == IMC::VehicleCommand::VC_STOP_MANEUVER) return children_nodes_[1]->executeTick();
+          if(cmd.value()->command == IMC::VehicleCommand::VC_START_CALIBRATION) return children_nodes_[2]->executeTick();
+          if(cmd.value()->command == IMC::VehicleCommand::VC_STOP_CALIBRATION) return children_nodes_[3]->executeTick();
+
+          return BT::NodeStatus::FAILURE; 
+        }
+      };
+
+      class VC_EXEC : public BT::SyncActionNode
+      {
+        public:
+          Task* mt;    
+          VC_EXEC(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
+
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<const DUNE::IMC::VehicleCommand*>("cmd")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto cmd = getInput<const DUNE::IMC::VehicleCommand*>("cmd");
+          mt->startManeuver(cmd.value());
+          return BT::NodeStatus::SUCCESS; 
+        }
+
+      };
+
+      class VC_STOP : public BT::SyncActionNode
+      {
+        public:
+          Task* mt;    
+          VC_STOP(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
+
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<const DUNE::IMC::VehicleCommand*>("cmd")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto cmd = getInput<const DUNE::IMC::VehicleCommand*>("cmd");
+          mt->stopManeuver();
+          mt->requestOK(cmd.value(), DTR("OK"));
+          return BT::NodeStatus::SUCCESS; 
+        }
+
+      };
+
+      class VC_START_CAL : public BT::SyncActionNode
+      {
+        public:
+          Task* mt;    
+          VC_START_CAL(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
+
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<const DUNE::IMC::VehicleCommand*>("cmd")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto cmd = getInput<const DUNE::IMC::VehicleCommand*>("cmd");
+          mt->startCalibration(cmd.value());
+          return BT::NodeStatus::SUCCESS; 
+        }
+
+      };
+
+      class VC_STOP_CAL : public BT::SyncActionNode
+      {
+        public:
+          Task* mt;    
+          VC_STOP_CAL(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
+
+        static BT::PortsList 
+        providedPorts()
+        {
+          return {BT::InputPort<const DUNE::IMC::VehicleCommand*>("cmd")};
+        }
+
+        BT::NodeStatus 
+        tick() override
+        {
+          auto cmd = getInput<const DUNE::IMC::VehicleCommand*>("cmd");
+          mt->stopCalibration(cmd.value());
+          return BT::NodeStatus::SUCCESS; 
+        }
+      };
     };
   }
 }
