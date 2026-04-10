@@ -301,6 +301,35 @@ namespace Supervisors
       //! Current maneuver control state
       unsigned m_state;
     };
+
+    
+    /*
+    class RequestsNode : public BT::ConditionNode
+    {
+    private:
+        std::queue<Request*>& m_reqs_ref;
+
+    public:
+        RequestsNode(const std::string& name, const BT::NodeConfiguration& config, std::queue<Request*>& reqs) : BT::ConditionNode(name, config), m_reqs_ref(reqs), m_task(task) {}
+
+        static BT::PortsList providedPorts() { return {}; }
+
+        BT::NodeStatus tick() override
+        {
+            // Agora tens acesso direto à queue do Supervisor
+            if (m_reqs_ref.empty()) 
+                return BT::NodeStatus::FAILURE;
+
+            // Podes verificar o conteúdo sem precisar do Blackboard
+            Request* current = m_reqs_ref.front();
+            
+            // Exemplo: se houver pedidos, SUCCESS
+            return BT::NodeStatus::SUCCESS;
+        }
+    };
+
+    */
+
   }
 }
 
