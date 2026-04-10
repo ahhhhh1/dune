@@ -135,7 +135,7 @@ namespace Supervisors
         .description("Timeout for starting or stopping a maneuver");
 
         param("Behavior Tree XML", m_tree_xml_path)
-        .defaultValue("../src/Supervisors/Vehicle/Manuever.xml")
+        .defaultValue("./src/Supervisors/Vehicle/Manuever.xml")
         .description("Path to behavior tree XML for maneuver handling");
 
         bind<IMC::Abort>(this);
@@ -165,16 +165,36 @@ namespace Supervisors
         m_err_timer.setTop(c_error_period);
         m_loops_timer.setTop(c_loops_check_time);
         m_idle.duration = 0;
-        if(m_bt_factory.builders().count("ManueverControlState_Switch") == 0){
+        if(m_bt_factory.builders().count("ManueverControlState_Switch") == 0)
+    {
+        // Use a lambda to pass 'this' to the constructor
+        m_bt_factory.registerBuilder<eta_update>("eta_update", 
+            [this](const std::string& name, const BT::NodeConfig& config) {
+                return std::make_unique<eta_update>(name, config, this);
+            });
+
+        m_bt_factory.registerBuilder<set_done>("set_done", 
+            [this](const std::string& name, const BT::NodeConfig& config) {
+                return std::make_unique<set_done>(name, config, this);
+            });
+
+        m_bt_factory.registerBuilder<ERROR>("ERROR", 
+            [this](const std::string& name, const BT::NodeConfig& config) {
+                return std::make_unique<ERROR>(name, config, this);
+            });
+
+        m_bt_factory.registerBuilder<Source_mode>("Source_mode", 
+            [this](const std::string& name, const BT::NodeConfig& config) {
+                return std::make_unique<Source_mode>(name, config, this);
+            });
+
+        // Register the switch and others normally or with the same builder pattern
         m_bt_factory.registerNodeType<ManueverControlState_Switch>("ManueverControlState_Switch");
-        m_bt_factory.registerNodeType<Source_mode>("Source_mode");
-        m_bt_factory.registerNodeType<eta_update>("eta_update");
-        m_bt_factory.registerNodeType<set_done>("set_done");
-        m_bt_factory.registerNodeType<ERROR>("ERROR");
         m_bt_factory.registerNodeType<STOPPED>("STOPPED");
+
         m_bt_blackboard = BT::Blackboard::create();
         m_bt_tree = m_bt_factory.createTreeFromFile(m_tree_xml_path, m_bt_blackboard);
-        }
+    }
 
         war("ooa");
       }
@@ -793,18 +813,18 @@ namespace Supervisors
       {
         public:
           Task* mt;
-          eta_update(const std::string &name, const BT::NodeConfig& config): BT::SyncActionNode(name, config){};
+          eta_update(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
         
         static BT::PortsList 
         providedPorts()
         {
-          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+          return {BT::InputPort<const DUNE::IMC::ManeuverControlState*>("msg")};
         }
 
         BT::NodeStatus 
         tick() override
         {
-          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg");
+          auto msg = getInput<const DUNE::IMC::ManeuverControlState*>("msg");
           if(msg.value()->eta!=mt->m_vs.maneuver_eta){
             mt->m_vs.maneuver_eta = msg.value()->eta;
             mt->dispatch(mt->m_vs);
@@ -818,7 +838,7 @@ namespace Supervisors
       {
         public:
           Task* mt;    
-          set_done(const std::string &name, const BT::NodeConfig& config): BT::SyncActionNode(name, config){};
+          set_done(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
 
         static BT::PortsList 
         providedPorts()
@@ -845,18 +865,17 @@ namespace Supervisors
       {
         public: 
           Task* mt;    
-          ERROR(const std::string &name, const BT::NodeConfig& config): BT::SyncActionNode(name, config){};
-        
+          ERROR(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};        
         static BT::PortsList 
         providedPorts()
         {
-          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+          return {BT::InputPort<const DUNE::IMC::ManeuverControlState*>("msg")};
         }
 
         BT::NodeStatus 
         tick() override
         {
-          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg");
+          auto msg = getInput<const DUNE::IMC::ManeuverControlState*>("msg");
           mt->m_vs.last_error = IMC::Factory::getAbbrevFromId(mt->m_vs.maneuver_type)+ DTR(" maneuver error: ") + msg.value()->info;
           mt->m_vs.last_error_time = msg.value()->getTimeStamp();
           mt->debug("%s", mt->m_vs.last_error.c_str());
@@ -894,13 +913,13 @@ namespace Supervisors
         static BT::PortsList 
         providedPorts()
         {
-          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+          return {BT::InputPort<const DUNE::IMC::ManeuverControlState*>("msg")};
         }
 
         BT::NodeStatus 
         tick() override
         {
-          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg");
+          auto msg = getInput<const DUNE::IMC::ManeuverControlState*>("msg");
           if(msg.value()->state == IMC::ManeuverControlState::MCS_EXECUTING) return children_nodes_[0]->executeTick();
           if(msg.value()->state == IMC::ManeuverControlState::MCS_DONE) return children_nodes_[1]->executeTick();
           if(msg.value()->state == IMC::ManeuverControlState::MCS_ERROR) return children_nodes_[2]->executeTick();
@@ -916,17 +935,16 @@ namespace Supervisors
 
         public:
           Task* mt;
-          Source_mode(const std::string& name, const BT::NodeConfiguration& config): BT::ConditionNode(name, config){};
-
+          Source_mode(const std::string& name, const BT::NodeConfiguration& config, Task* task): BT::ConditionNode(name, config), mt(task) {};
         static BT::PortsList providedPorts()
         {
-          return {BT::InputPort<DUNE::IMC::ManeuverControlState*>("msg")};
+          return {BT::InputPort<const DUNE::IMC::ManeuverControlState*>("msg")};
         }
 
         BT::NodeStatus 
         tick() override
         {
-          auto msg = getInput<DUNE::IMC::ManeuverControlState*>("msg"); 
+          auto msg = getInput<const DUNE::IMC::ManeuverControlState*>("msg");
           if(msg.value()->getSource() == mt->getSystemId())
           {
             mt->m_man_sup->update(msg.value());
