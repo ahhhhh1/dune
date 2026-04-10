@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="Untitled">
+    <ReactiveSequence>
+      <Source_mode msg="{msg}"/>
+      
+      <ManueverControlState_Switch msg="{msg}">
+        <eta_update msg="{msg}"/>
+        <set_done/>
+        <ERROR msg="{msg}"/>
+        <STOPPED/>
+      </ManueverControlState_Switch>
+    </ReactiveSequence>
+  </BehaviorTree>
+</root>
