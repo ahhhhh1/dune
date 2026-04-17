@@ -1,0 +1,26 @@
+Implementar STOP and Resume
+
+src/Plan/Engine-------------------------------------
+    
+    Plan.cpp
+
+        excertos interessantes para iterar pelas manobras:
+
+        Plan::loadStartManeuver(void)
+            {
+            m_last_id = m_spec->start_man_id;
+
+            return loadManeuverFromId(m_last_id);
+            }
+
+        implementar variavel para guardar ultima manobra dada antes do stop. e usa-la como bool para saber se devo ou não tentar resume
+
+src/Supervisors/Vehicle/Task.cpp-------------------------------
+
+    Task.cpp
+
+        implementar variavel para guardar ultima manobra dada antes do stop.
+
+        variavel para saber se devo ou não tentar resume
+
+        função para transmitir informação sobre resume ou não para src/Plan/Engine-
