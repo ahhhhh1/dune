@@ -4,7 +4,12 @@
         <Tree_selector Consume_ID="{Consume_ID}">
             <SubTree ID="VehicleCommandBranch" _autoremap="true"/>
             <SubTree ID="ControlStateBranch" _autoremap="true"/>
+            <SubTree ID="QueueProcessingBranch" _autoremap="true"/>
         </Tree_selector>
+    </BehaviorTree>
+
+    <BehaviorTree ID="QueueProcessingBranch">
+        <ProcessRequests />
     </BehaviorTree>
 
     <BehaviorTree ID="VehicleCommandBranch">

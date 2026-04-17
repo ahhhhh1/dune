@@ -177,9 +177,9 @@ namespace Supervisors
         m_bt_factory.registerBuilder<VC_STOP_CAL>("VC_STOP_CAL", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<VC_STOP_CAL>(name, config, this);});
         
         m_bt_factory.registerBuilder<VehicleCommand_Switch>("VehicleCommand_Switch", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<VehicleCommand_Switch>(name, config, this);});
-
-        // Register the switch and others normally or with the same builder pattern
         m_bt_factory.registerNodeType<ManueverControlState_Switch>("ManueverControlState_Switch");
+        m_bt_factory.registerBuilder<ProcessRequests>("ProcessRequests", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<ProcessRequests>(name, config, this);}); 
+
         m_bt_factory.registerNodeType<Tree_selector>("Tree_selector");
         m_bt_factory.registerNodeType<STOPPED>("STOPPED");
 
@@ -678,6 +678,8 @@ namespace Supervisors
         }
 
         m_man_sup->update();
+        m_bt_blackboard->set("Consume_ID", 2);          
+        m_bt_tree.tickOnce();
 
         if (m_switch_time < 0.0)
           return;
@@ -818,6 +820,7 @@ namespace Supervisors
           auto Consume_ID = getInput<int>("Consume_ID");
           if(Consume_ID.value() == 0) return children_nodes_[0]->executeTick();
           if(Consume_ID.value() == 1) return children_nodes_[1]->executeTick();
+          if(Consume_ID.value() == 2) return children_nodes_[2]->executeTick();
 
           return BT::NodeStatus::FAILURE; 
         }
@@ -969,31 +972,6 @@ namespace Supervisors
         }
       };
 
-      /*
-        {
-        if (cmd->type != IMC::VehicleCommand::VC_REQUEST)
-          return;
-
-        trace("%s request (%u/%u/%u)", c_cmd_desc[cmd->command],
-              cmd->getSource(), cmd->getSourceEntity(), cmd->request_id);
-
-        switch ((IMC::VehicleCommand::CommandEnum)cmd->command)
-        {
-          case IMC::VehicleCommand::VC_EXEC_MANEUVER:
-            startManeuver(cmd);
-            break;
-          case IMC::VehicleCommand::VC_STOP_MANEUVER:
-            stopManeuver();
-            requestOK(cmd, DTR("OK"));
-            break;
-          case IMC::VehicleCommand::VC_START_CALIBRATION:
-            startCalibration(cmd);
-            break;
-          case IMC::VehicleCommand::VC_STOP_CALIBRATION:
-            stopCalibration(cmd);
-            break;
-        }
-      }*/
       class VehicleCommand_Switch : public BT::ControlNode
       {
         public:
@@ -1110,8 +1088,68 @@ namespace Supervisors
           return BT::NodeStatus::SUCCESS; 
         }
       };
+
+      class ProcessRequests : public BT::SyncActionNode {
+        public:
+          Task* mt;
+          ProcessRequests(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
+
+          static BT::PortsList providedPorts() { return {}; }
+          
+          BT::NodeStatus tick() override {
+            ManeuverSupervisor* ms = mt->m_man_sup;
+            if (ms->m_curr_req != NULL || ms->m_reqs.empty()) return BT::NodeStatus::FAILURE;
+            ms->m_curr_req = ms->m_reqs.front();
+            ms->m_reqs.pop();
+
+            if (ms->m_valid_state) {
+              if (ms->m_curr_req->isStop()) {
+
+                if (ms->m_state != IMC::ManeuverControlState::MCS_EXECUTING){ 
+                  ms->clearCurrent();
+                  return BT::NodeStatus::SUCCESS;
+                }
+
+                if (!ms->m_reqs.empty() && ms->m_reqs.front()->isStop()){ 
+                  ms->clearCurrent();
+                  return BT::NodeStatus::SUCCESS;
+                }
+              }
+              else if (ms->m_curr_req->isStart()){
+                if (ms->m_state == IMC::ManeuverControlState::MCS_EXECUTING){
+                  ms->clearCurrent();
+                  return BT::NodeStatus::SUCCESS;
+                }
+                if (!ms->m_reqs.empty()){
+                  if (ms->m_reqs.front()->isStart()){
+                    ms->clearCurrent();
+                    return BT::NodeStatus::SUCCESS;
+                  }
+                  else if (ms->m_reqs.front()->isStop()){
+                    ms->clearCurrent(); Memory::clear(ms->m_reqs.front());
+                    ms->m_reqs.pop();
+                    return BT::NodeStatus::SUCCESS;
+                  }
+                }
+              }
+            }
+            else if (ms->m_curr_req->isStop()){ 
+              ms->clearCurrent();
+              return BT::NodeStatus::SUCCESS;
+            }
+            ms->m_curr_req->issue();
+            mt->dispatch(ms->m_curr_req->getMessage());
+            return BT::NodeStatus::SUCCESS;
+          }
+      };
+
     };
   }
 }
 
 DUNE_TASK
+
+
+/*
+  Stop save and resume
+*/
