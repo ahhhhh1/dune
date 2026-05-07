@@ -13,14 +13,24 @@
     </BehaviorTree>
 
     <BehaviorTree ID="VehicleCommandBranch">
-        <ReactiveSequence>
-            <VehicleCommand_Switch cmd="{cmd}">
-                <VC_EXEC      cmd="{cmd}"/>
-                <VC_STOP      cmd="{cmd}"/>
-                <VC_START_CAL cmd="{cmd}"/>
-                <VC_STOP_CAL  cmd="{cmd}"/>
-            </VehicleCommand_Switch>
-        </ReactiveSequence>
+        <VehicleCommand_Switch cmd="{cmd}">
+            <Sequence>
+                <Fallback>
+                    <Inverter>
+                        <CheckResume />
+                    </Inverter>
+                    <AlwaysSuccess>
+                        </AlwaysSuccess>
+                </Fallback>
+                <VC_EXEC cmd="{cmd}"/>
+            </Sequence>
+
+            <VC_STOP cmd="{cmd}"/>
+
+            <VC_START_CAL cmd="{cmd}"/>
+
+            <VC_STOP_CAL cmd="{cmd}"/>
+        </VehicleCommand_Switch>
     </BehaviorTree>
 
     <BehaviorTree ID="ControlStateBranch">

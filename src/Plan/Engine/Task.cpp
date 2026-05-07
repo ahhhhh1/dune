@@ -89,6 +89,7 @@ namespace Plan
       std::string label_gen;
       //! Absolute maximum depth.
       float max_depth;
+      
     };
 
     struct Task: public DUNE::Tasks::Task
@@ -130,6 +131,10 @@ namespace Plan
       Path m_db_file;
       //! Task arguments.
       Arguments m_args;
+      //! True if the supervisor indicates a resume is possible.
+      bool m_vs_can_resume;
+      //! The ID of the last maneuver attempted/executed.
+      std::string m_vs_resume_man_id;
 
       Task(const std::string& name, Tasks::Context& ctx):
         DUNE::Tasks::Task(name, ctx),
@@ -379,13 +384,16 @@ namespace Plan
         }
       }
 
-      void
+     void
       consume(const IMC::VehicleState* vs)
       {
         if (getEntityState() == IMC::EntityState::ESTA_BOOT)
           return;
 
         m_last_vstate = Clock::get();
+
+        // Check if the supervisor has flagged a valid resume point
+        m_vs_can_resume = (vs->flags & IMC::VehicleState::VFLG_MANEUVER_DONE) != 0;
 
         switch (vs->op_mode)
         {
@@ -414,10 +422,26 @@ namespace Plan
 
           if (m_plan->isCalibrationDone())
           {
-            if ((vs->op_mode == IMC::VehicleState::VS_CALIBRATION) &&
-                !pendingReply())
+            if ((vs->op_mode == IMC::VehicleState::VS_CALIBRATION) && !pendingReply())
             {
-              IMC::PlanManeuver* pman = m_plan->loadStartManeuver();
+              inf(DTR("calibration finished, checking for resume point..."));
+              
+              IMC::PlanManeuver* pman = NULL;
+
+              // Use our resume logic here as well!
+              if (m_vs_can_resume && !m_vs_resume_man_id.empty())
+              {
+                inf(DTR("resuming after calibration at: %s"), m_vs_resume_man_id.c_str());
+                pman = m_plan->loadResumeManeuver(m_vs_resume_man_id);
+              }
+
+              // Fallback to start if no resume point exists
+              if (pman == NULL)
+              {
+                inf(DTR("no resume point found, starting from beginning"));
+                pman = m_plan->loadStartManeuver();
+              }
+
               startManeuver(pman);
             }
           }
@@ -470,7 +494,7 @@ namespace Plan
           if (m_plan->isDone())
           {
             vehicleRequest(IMC::VehicleCommand::VC_STOP_MANEUVER);
-
+            m_vs_resume_man_id.clear();
             std::string comp = DTR("plan completed");
             onSuccess(comp, false);
             m_pcs.last_outcome = IMC::PlanControlState::LPO_SUCCESS;
@@ -649,6 +673,13 @@ namespace Plan
           changeMode(IMC::PlanControlState::PCS_READY,
                      DTR("plan parse failed: ") + m_reply.info);
           return false;
+        }
+
+        if (m_pcs.plan_id != plan_id)
+        {
+          inf(DTR("new plan detected ('%s'), clearing resume point"), plan_id.c_str());
+          m_vs_resume_man_id.clear();
+          m_vs_can_resume = false;
         }
 
         // reply with statistics
@@ -840,6 +871,7 @@ namespace Plan
       //! @param[in] spec plan specification message if any
       //! @param[in] flags plan control flags
       //! @return false if previously executing maneuver was not stopped
+
       bool
       startPlan(const std::string& plan_id, const IMC::Message* spec, uint16_t flags)
       {
@@ -862,17 +894,48 @@ namespace Plan
           m_plan->planStarted();
         }
 
+        // Pointer to hold our target maneuver
+        IMC::PlanManeuver* pman = NULL;
+
+        // --- Resume Logic (Forced Check) ---
+        // We check m_vs_can_resume (Supervisor signal) and the saved ID.
+        // We bypassed the (flags & 0x0002) check to ensure it triggers.
+        if (m_vs_can_resume && !m_vs_resume_man_id.empty())
+        {
+          inf(DTR("Auto-resume triggered. Target: %s"), m_vs_resume_man_id.c_str());
+
+          pman = m_plan->loadResumeManeuver(m_vs_resume_man_id);
+
+          if (pman != NULL)
+          {
+            inf(DTR("Resume point successfully loaded: %s"), m_vs_resume_man_id.c_str());
+          }
+          else
+          {
+            war(DTR("Resume point '%s' not found in plan graph, starting from beginning"), m_vs_resume_man_id.c_str());
+            pman = m_plan->loadStartManeuver();
+          }
+        }
+        else
+        {
+          inf(DTR("Starting plan from the beginning"));
+          pman = m_plan->loadStartManeuver();
+        }
+        // ------------------------------------
+
         dispatch(m_spec);
 
-        if ((flags & IMC::PlanControl::FLG_CALIBRATE) &&
-            m_args.do_calib)
+        if ((flags & IMC::PlanControl::FLG_CALIBRATE) && m_args.do_calib)
         {
+          // If calibration is requested, startCalibration is called.
+          // Note: When calibration finishes, 'consume(VehicleState)' is called.
+          // You must ensure that function also uses loadResumeManeuver!
           if (!startCalibration())
             return stopped;
         }
         else
         {
-          IMC::PlanManeuver* pman = m_plan->loadStartManeuver();
+          // Execute the resolved maneuver (Resume point or Start point)
           startManeuver(pman);
 
           if (execMode())
@@ -938,6 +1001,9 @@ namespace Plan
                    pman->maneuver_id, pman->data.get(), TYPE_INF);
 
         m_plan->maneuverStarted(pman->maneuver_id);
+
+        // Update the resume point to the maneuver we just started
+        m_vs_resume_man_id = pman->maneuver_id;
       }
 
       //! Answer to the plan control request
