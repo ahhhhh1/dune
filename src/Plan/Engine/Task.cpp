@@ -428,17 +428,19 @@ namespace Plan
               
               IMC::PlanManeuver* pman = NULL;
 
-              // Use our resume logic here as well!
               if (m_vs_can_resume && !m_vs_resume_man_id.empty())
               {
-                inf(DTR("resuming after calibration at: %s"), m_vs_resume_man_id.c_str());
+                inf(DTR("resuming execution path after calibration at waypoint: %s"), m_vs_resume_man_id.c_str());
                 pman = m_plan->loadResumeManeuver(m_vs_resume_man_id);
               }
 
-              // Fallback to start if no resume point exists
               if (pman == NULL)
               {
-                inf(DTR("no resume point found, starting from beginning"));
+                if (!m_vs_resume_man_id.empty())
+                {
+                  war(DTR("resume target '%s' missing from active plan graph layout, resetting to root"), m_vs_resume_man_id.c_str());
+                }
+                inf(DTR("starting execution sequence from plan origin"));
                 pman = m_plan->loadStartManeuver();
               }
 
@@ -677,9 +679,18 @@ namespace Plan
 
         if (m_pcs.plan_id != plan_id)
         {
-          inf(DTR("new plan detected ('%s'), clearing resume point"), plan_id.c_str());
-          m_vs_resume_man_id.clear();
-          m_vs_can_resume = false;
+
+          if (m_vs_can_resume && !m_vs_resume_man_id.empty())
+          {
+            inf(DTR("new plan container context matching active resume sequence ('%s'), preserving tracking point: %s"), 
+                plan_id.c_str(), m_vs_resume_man_id.c_str());
+          }
+          else
+          {
+            inf(DTR("new plan detected ('%s'), clearing resume point"), plan_id.c_str());
+            m_vs_resume_man_id.clear();
+            m_vs_can_resume = false;
+          }
         }
 
         // reply with statistics
@@ -894,31 +905,24 @@ namespace Plan
           m_plan->planStarted();
         }
 
-        // Pointer to hold our target maneuver
+        // --- Resume Logic (Forced Check) ---
+        // FIX: Explicitly declare pman pointer here
         IMC::PlanManeuver* pman = NULL;
 
-        // --- Resume Logic (Forced Check) ---
-        // We check m_vs_can_resume (Supervisor signal) and the saved ID.
-        // We bypassed the (flags & 0x0002) check to ensure it triggers.
-        if (m_vs_can_resume && !m_vs_resume_man_id.empty())
+        if (!m_vs_resume_man_id.empty())
         {
-          inf(DTR("Auto-resume triggered. Target: %s"), m_vs_resume_man_id.c_str());
-
+          inf(DTR("Resuming plan execution at saved step: %s"), m_vs_resume_man_id.c_str());
           pman = m_plan->loadResumeManeuver(m_vs_resume_man_id);
-
-          if (pman != NULL)
+          
+          if (pman == NULL)
           {
-            inf(DTR("Resume point successfully loaded: %s"), m_vs_resume_man_id.c_str());
-          }
-          else
-          {
-            war(DTR("Resume point '%s' not found in plan graph, starting from beginning"), m_vs_resume_man_id.c_str());
+            war(DTR("Maneuver '%s' not found in plan layout, falling back to beginning"), m_vs_resume_man_id.c_str());
             pman = m_plan->loadStartManeuver();
           }
         }
         else
         {
-          inf(DTR("Starting plan from the beginning"));
+          inf(DTR("Starting fresh execution track from root maneuver node"));
           pman = m_plan->loadStartManeuver();
         }
         // ------------------------------------

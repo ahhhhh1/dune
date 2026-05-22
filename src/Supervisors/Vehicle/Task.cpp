@@ -114,9 +114,10 @@ namespace Supervisors
       //! Resume logic variables
       std::string m_resume_man_id;
       std::string m_resume_plan_id;
+      std::string m_stage_man_id;
+      std::string m_stage_plan_id;
       bool m_can_resume;
       bool m_can_resume_teleop;
-
 
       Task(const std::string& name, Tasks::Context& ctx):
         Tasks::Periodic(name, ctx),
@@ -186,6 +187,7 @@ namespace Supervisors
           
           // Resume node
           m_bt_factory.registerBuilder<CheckResume>("CheckResume", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<CheckResume>(name, config, this);});
+          m_bt_factory.registerBuilder<TrackResumeState>("TrackResumeState", [this](const std::string& name, const BT::NodeConfig& config) {return std::make_unique<TrackResumeState>(name, config, this);});
 
           // Register Control Nodes
           m_bt_factory.registerNodeType<ManueverControlState_Switch>("ManueverControlState_Switch");
@@ -489,39 +491,17 @@ namespace Supervisors
       void
       consume(const IMC::PlanControl* msg)
       {
-
         if ((msg->type == IMC::PlanControl::PC_REQUEST) &&
             (msg->op == IMC::PlanControl::PC_START))
         {
-
           if(!msg->plan_id.empty())
           {
-            if (m_resume_plan_id != msg->plan_id)
-            {
-              if(teleoperationOn() && m_can_resume_teleop)
-              {
-                inf(DTR("plan ID mismatch (%s vs %s), but teleoperation is on and resume from teleop is allowed, keeping resume point"), m_resume_plan_id.c_str(), msg->plan_id.c_str());
-                m_can_resume = true;
-              }
-
-              else
-              {
-                inf(DTR("plan ID mismatch (%s vs %s), disabling resume"), m_resume_plan_id.c_str(), msg->plan_id.c_str());
-                m_can_resume = false;
-                m_resume_man_id.clear();
-              }
-
-            }
-            if((m_vs.control_loops & 0x02) == 0) m_resume_plan_id = msg->plan_id;
+            m_stage_plan_id = msg->plan_id;
             war(DTR("starting plan '%s'"), msg->plan_id.c_str());
-
           }
-          // check if plan is supposed to ignore some errors
+
           if (msg->flags & IMC::PlanControl::FLG_IGNORE_ERRORS)
-          {
             m_ignore_errors = true;
-          }
-
           else
             m_ignore_errors = false;
         }
@@ -530,11 +510,10 @@ namespace Supervisors
       void
       consume(const IMC::PlanControlState* msg)
       {
-        if (teleoperationOn() || nonOverridableLoops() || msg->man_id.empty())
+        if (msg->man_id.empty())
             return;
 
-        inf(DTR("man detected ('%s')"), msg->man_id.c_str());
-        m_resume_man_id = msg->man_id;
+        m_stage_man_id = msg->man_id;
       }
 
       void
@@ -657,7 +636,7 @@ namespace Supervisors
         changeMode(IMC::VehicleState::VS_MANEUVER, clone);
         delete clone;
 
-        requestOK(msg, mtype + DTR(" maneuver started"));
+        requestOK(msg, mtype + DTR(" maneuver started"));flag
       }
 
       void
@@ -1028,7 +1007,8 @@ namespace Supervisors
         {
           return {BT::InputPort<const DUNE::IMC::VehicleCommand*>("cmd")};
         }
-
+std::string m_stage_man_id;
+      std::string m_stage_plan_id;
         BT::NodeStatus 
         tick() override
         {
@@ -1199,6 +1179,58 @@ namespace Supervisors
               return BT::NodeStatus::SUCCESS;
             }
             return BT::NodeStatus::FAILURE; 
+          }
+      };
+
+      class TrackResumeState : public BT::SyncActionNode
+      {
+        public:
+          Task* mt;
+          TrackResumeState(const std::string &name, const BT::NodeConfig& config, Task* task): BT::SyncActionNode(name, config), mt(task) {};
+
+          static BT::PortsList providedPorts() { return {}; }
+
+          BT::NodeStatus tick() override
+          {
+            // 1. Check if the active running state or incoming data is a manual override pattern
+            bool is_staged_teleop = (mt->m_stage_man_id == "Teleoperation" || 
+                                     mt->m_stage_man_id == "IdleManeuver" ||
+                                     mt->m_stage_man_id.find("teleop") != std::string::npos);
+
+            bool is_plan_teleop = (mt->m_stage_plan_id == "teleoperation-mode" ||
+                                   mt->m_stage_plan_id.find("teleop") != std::string::npos);
+
+            // 2. If an interactive override layout is active or staged, lock and protect current state
+            if (mt->teleoperationOn() || mt->nonOverridableLoops() || is_staged_teleop || is_plan_teleop)
+            {
+              // We keep m_can_resume true because we want to preserve the tracking point we came from
+              if (!mt->m_resume_man_id.empty())
+                mt->m_can_resume = true;
+                
+              return BT::NodeStatus::SUCCESS;
+            }
+
+            // 3. Handle true structural Plan ID changes (switching from one actual mission plan to another)
+            if (!mt->m_stage_plan_id.empty() && mt->m_resume_plan_id != mt->m_stage_plan_id)
+            {
+              // If we aren't in teleoperation and a different real plan is starting, clear the resume point
+              mt->m_can_resume = false;
+              mt->m_resume_man_id.clear();
+              mt->m_resume_plan_id = mt->m_stage_plan_id;
+            }
+
+            // 4. If we are executing a valid structural mission track, safely commit the tracking updates
+            if (mt->maneuverMode() && !mt->m_stage_man_id.empty())
+            {
+              mt->m_resume_man_id = mt->m_stage_man_id;
+              mt->m_resume_plan_id = mt->m_stage_plan_id;
+              mt->m_can_resume = true;
+              
+              mt->trace("BT synchronized tracking profile: %s (Plan: %s)", 
+                        mt->m_resume_man_id.c_str(), mt->m_resume_plan_id.c_str());
+            }
+
+            return BT::NodeStatus::SUCCESS;
           }
       };
     };
