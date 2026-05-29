@@ -627,7 +627,7 @@ namespace Plan
         switch (pc->op)
         {
           case IMC::PlanControl::PC_START:
-            if (!startPlan(pc->plan_id, pc->arg.isNull() ? 0 : pc->arg.get(), pc->flags))
+            if (!startPlan(pc->plan_id, pc->arg.isNull() ? 0 : pc->arg.get(), pc->flags))ç
               vehicleRequest(IMC::VehicleCommand::VC_STOP_MANEUVER);
             break;
           case IMC::PlanControl::PC_STOP:

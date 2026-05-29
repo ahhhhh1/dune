@@ -117,7 +117,7 @@ namespace Supervisors
       std::string m_stage_man_id;
       std::string m_stage_plan_id;
       bool m_can_resume;
-      bool m_can_resume_teleop;
+      //bool m_can_resume_teleop;
 
       Task(const std::string& name, Tasks::Context& ctx):
         Tasks::Periodic(name, ctx),
@@ -636,7 +636,7 @@ namespace Supervisors
         changeMode(IMC::VehicleState::VS_MANEUVER, clone);
         delete clone;
 
-        requestOK(msg, mtype + DTR(" maneuver started"));flag
+        requestOK(msg, mtype + DTR(" maneuver started"));
       }
 
       void
@@ -645,10 +645,8 @@ namespace Supervisors
 
         if (maneuverMode())
         {
-          // Save the ID of the maneuver that was active (e.g., "Goto2")
+          // Save the ID of the maneuver that was active
           m_can_resume = true;
-          if (m_resume_man_id.empty()) m_resume_man_id = "Unknown";
-          inf(DTR("maneuver interrupted, resume point saved: %s"), m_resume_man_id.c_str());
         }
 
         if (!errorMode() && !bootMode())
@@ -1007,8 +1005,8 @@ namespace Supervisors
         {
           return {BT::InputPort<const DUNE::IMC::VehicleCommand*>("cmd")};
         }
-std::string m_stage_man_id;
-      std::string m_stage_plan_id;
+          std::string m_stage_man_id;
+          std::string m_stage_plan_id;
         BT::NodeStatus 
         tick() override
         {
@@ -1192,7 +1190,7 @@ std::string m_stage_man_id;
 
           BT::NodeStatus tick() override
           {
-            // 1. Check if the active running state or incoming data is a manual override pattern
+            /*
             bool is_staged_teleop = (mt->m_stage_man_id == "Teleoperation" || 
                                      mt->m_stage_man_id == "IdleManeuver" ||
                                      mt->m_stage_man_id.find("teleop") != std::string::npos);
@@ -1200,26 +1198,24 @@ std::string m_stage_man_id;
             bool is_plan_teleop = (mt->m_stage_plan_id == "teleoperation-mode" ||
                                    mt->m_stage_plan_id.find("teleop") != std::string::npos);
 
-            // 2. If an interactive override layout is active or staged, lock and protect current state
+            // teleop
             if (mt->teleoperationOn() || mt->nonOverridableLoops() || is_staged_teleop || is_plan_teleop)
             {
-              // We keep m_can_resume true because we want to preserve the tracking point we came from
               if (!mt->m_resume_man_id.empty())
                 mt->m_can_resume = true;
                 
               return BT::NodeStatus::SUCCESS;
             }
-
-            // 3. Handle true structural Plan ID changes (switching from one actual mission plan to another)
+            */
+            // change plan
             if (!mt->m_stage_plan_id.empty() && mt->m_resume_plan_id != mt->m_stage_plan_id)
             {
-              // If we aren't in teleoperation and a different real plan is starting, clear the resume point
               mt->m_can_resume = false;
               mt->m_resume_man_id.clear();
               mt->m_resume_plan_id = mt->m_stage_plan_id;
             }
 
-            // 4. If we are executing a valid structural mission track, safely commit the tracking updates
+            // Non plan end
             if (mt->maneuverMode() && !mt->m_stage_man_id.empty())
             {
               mt->m_resume_man_id = mt->m_stage_man_id;
@@ -1232,9 +1228,23 @@ std::string m_stage_man_id;
 
             return BT::NodeStatus::SUCCESS;
           }
+
       };
     };
   }
 }
 
 DUNE_TASK
+
+/* 
+
+  Arranjar condições para skip.
+  Provavelmente apenas necessário dar set a vs->flag para Flag_manuever_done. MEDIANTE CONDIÇÔES A DEFINIR.
+  Pensar Qual variavel de teste para dar skip a manobra.
+  talvez adicionar logica de skip na folha de trackresumestate.
+  Em principio caso o metodo de flag funcione não é necessario comunicação com engine plan como no caso de resume devido a não ser necessário conhecimento futuro de manobras.
+  declarar parametro de skip no ini
+  definir parametro de skip aqui
+  criar função de atualização do parametro para dar poll do neptus
+
+*/
